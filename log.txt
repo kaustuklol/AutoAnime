@@ -1,0 +1,826 @@
+2023-03-20 07:13:26,719 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:13:26,878 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:13:26,879 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:13:27,600 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:13:27,600 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:13:27,600 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:13:27,600 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:13:27,601 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:13:28,485 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 07:13:28,486 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 07:14:37,808 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 07:14:37,832 INFO MainThread pyrogram.dispatcher Stopped 20 HandlerTasks
+2023-03-20 07:14:37,833 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:14:37,833 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:14:37,833 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:14:37,834 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:14:40,987 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:14:41,149 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:14:41,149 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:14:41,845 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:14:41,845 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:14:41,845 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:14:41,845 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:14:41,847 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:14:43,039 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 07:14:43,039 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 07:15:24,208 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 07:15:26,889 INFO MainThread pyrogram.dispatcher Stopped 20 HandlerTasks
+2023-03-20 07:15:26,890 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:15:26,890 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:15:26,891 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:15:26,891 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:16:14,844 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:16:15,002 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:16:15,003 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:16:15,698 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:16:15,698 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:16:15,698 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:16:15,699 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:16:15,700 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:16:19,036 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 07:16:19,036 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 07:16:52,278 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 07:16:55,741 INFO MainThread pyrogram.dispatcher Stopped 20 HandlerTasks
+2023-03-20 07:16:55,742 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:16:55,742 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:16:55,743 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:16:55,743 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:17:34,272 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:17:34,473 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:17:34,635 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:17:34,636 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:17:35,376 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:17:35,376 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:17:35,376 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:17:35,376 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:17:35,378 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:17:36,328 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 07:17:36,328 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 07:18:08,848 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 07:18:10,413 INFO MainThread pyrogram.dispatcher Stopped 20 HandlerTasks
+2023-03-20 07:18:10,414 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:18:10,414 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:18:10,414 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:18:10,415 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:22:00,092 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:22:00,285 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:22:00,446 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:22:00,446 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:22:01,161 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:22:01,161 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:22:01,161 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:22:01,161 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:22:01,162 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:22:03,043 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 07:22:03,043 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 07:22:20,072 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 07:22:21,179 INFO MainThread pyrogram.dispatcher Stopped 20 HandlerTasks
+2023-03-20 07:22:21,180 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:22:21,180 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:22:21,181 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:22:21,181 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:22:53,099 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:22:53,292 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:22:53,450 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:22:53,451 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:22:54,151 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:22:54,152 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:22:54,152 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:22:54,152 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:22:54,153 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:22:55,065 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 07:22:55,065 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 07:22:55,242 INFO MainThread root {
+    "_": "User",
+    "id": 6108827735,
+    "is_self": true,
+    "is_contact": false,
+    "is_mutual_contact": false,
+    "is_deleted": false,
+    "is_bot": true,
+    "is_verified": false,
+    "is_restricted": false,
+    "is_scam": false,
+    "is_fake": false,
+    "is_support": false,
+    "is_premium": false,
+    "first_name": "bb",
+    "username": "sjsjvs_bot"
+}
+2023-03-20 07:23:26,844 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 07:23:29,185 INFO MainThread pyrogram.dispatcher Stopped 20 HandlerTasks
+2023-03-20 07:23:29,185 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:23:29,186 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:23:29,186 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:23:29,186 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:26:00,469 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:26:00,661 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:26:00,820 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:26:00,821 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:26:01,519 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:26:01,520 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:26:01,520 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:26:01,520 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:26:01,521 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:26:02,401 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 07:26:02,402 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 07:26:02,682 INFO MainThread root {
+    "_": "User",
+    "id": 6108827735,
+    "is_self": true,
+    "is_contact": false,
+    "is_mutual_contact": false,
+    "is_deleted": false,
+    "is_bot": true,
+    "is_verified": false,
+    "is_restricted": false,
+    "is_scam": false,
+    "is_fake": false,
+    "is_support": false,
+    "is_premium": false,
+    "first_name": "bb",
+    "username": "sjsjvs_bot"
+}
+2023-03-20 07:26:07,684 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 07:26:11,532 INFO MainThread pyrogram.dispatcher Stopped 20 HandlerTasks
+2023-03-20 07:26:11,533 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:26:11,533 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:26:11,533 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:26:11,533 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:26:33,910 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:26:34,118 INFO MainThread pyrogram.session.auth Start creating a new auth key on DC2
+2023-03-20 07:26:34,118 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:26:34,292 INFO MainThread pyrogram.connection.connection Connected! Production DC2 - IPv4
+2023-03-20 07:26:35,839 INFO MainThread pyrogram.session.auth Done auth key exchange: DhGenOk
+2023-03-20 07:26:35,839 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:26:35,844 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:26:35,976 INFO MainThread pyrogram.connection.connection Connected! Production DC2 - IPv4
+2023-03-20 07:26:35,977 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:26:36,577 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:26:36,577 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:26:36,577 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:26:36,577 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:26:36,578 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:26:36,742 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:26:36,742 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:26:36,742 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:26:36,743 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:26:36,746 INFO MainThread pyrogram.session.auth Start creating a new auth key on DC5
+2023-03-20 07:26:36,746 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:26:36,906 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:26:38,367 INFO MainThread pyrogram.session.auth Done auth key exchange: DhGenOk
+2023-03-20 07:26:38,368 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:26:38,372 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:26:38,528 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:26:38,529 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:26:39,257 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:26:39,257 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:26:39,258 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:26:39,258 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:26:39,258 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:26:40,396 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 07:26:40,396 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 07:26:40,611 INFO MainThread root {
+    "_": "User",
+    "id": 6108827735,
+    "is_self": true,
+    "is_contact": false,
+    "is_mutual_contact": false,
+    "is_deleted": false,
+    "is_bot": true,
+    "is_verified": false,
+    "is_restricted": false,
+    "is_scam": false,
+    "is_fake": false,
+    "is_support": false,
+    "is_premium": false,
+    "first_name": "bb",
+    "username": "sjsjvs_bot"
+}
+2023-03-20 07:27:42,370 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:27:42,531 INFO MainThread pyrogram.connection.connection Connected! Production DC5 (media) - IPv4
+2023-03-20 07:27:42,531 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:27:43,281 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:27:43,281 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:27:43,281 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:27:43,281 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:27:43,283 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:27:49,939 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:27:49,939 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:27:49,939 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:27:49,939 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:27:51,024 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:27:51,186 INFO MainThread pyrogram.connection.connection Connected! Production DC5 (media) - IPv4
+2023-03-20 07:27:51,186 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:27:51,883 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:27:51,883 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:27:51,883 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:27:51,883 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:27:51,884 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:27:52,574 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:27:52,575 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:27:52,575 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:27:52,575 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:27:53,456 INFO Handler_0 root {
+    "_": "Message",
+    "id": 702,
+    "sender_chat": {
+        "_": "Chat",
+        "id": -1001563681125,
+        "type": "ChatType.CHANNEL",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_creator": false,
+        "is_scam": false,
+        "is_fake": false,
+        "title": "Anime Ongoing Region",
+        "username": "Anime_Region_Ongoing",
+        "has_protected_content": false
+    },
+    "date": "2023-03-20 07:27:53",
+    "chat": {
+        "_": "Chat",
+        "id": -1001563681125,
+        "type": "ChatType.CHANNEL",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_creator": false,
+        "is_scam": false,
+        "is_fake": false,
+        "title": "Anime Ongoing Region",
+        "username": "Anime_Region_Ongoing",
+        "has_protected_content": false
+    },
+    "mentioned": false,
+    "scheduled": false,
+    "from_scheduled": false,
+    "media": "MessageMediaType.PHOTO",
+    "has_protected_content": false,
+    "has_media_spoiler": false,
+    "photo": {
+        "_": "Photo",
+        "file_id": "AgACAgUAAx0EXTPhZQACAr5kGAr5S4KGcXzNx2qlW5KHYpSVxAACyLUxG3lGwVStEvo6fjbmrgAIAQADAgADdwAHHgQ",
+        "file_unique_id": "AgADyLUxG3lGwVQ",
+        "width": 1920,
+        "height": 1080,
+        "file_size": 53342,
+        "date": "2023-03-20 07:27:53",
+        "thumbs": [
+            {
+                "_": "Thumbnail",
+                "file_id": "AgACAgUAAx0EXTPhZQACAr5kGAr5S4KGcXzNx2qlW5KHYpSVxAACyLUxG3lGwVStEvo6fjbmrgAIAQADAgADcwAHHgQ",
+                "file_unique_id": "AgADyLUxG3lGwVQ",
+                "width": 90,
+                "height": 51,
+                "file_size": 808
+            },
+            {
+                "_": "Thumbnail",
+                "file_id": "AgACAgUAAx0EXTPhZQACAr5kGAr5S4KGcXzNx2qlW5KHYpSVxAACyLUxG3lGwVStEvo6fjbmrgAIAQADAgADbQAHHgQ",
+                "file_unique_id": "AgADyLUxG3lGwVQ",
+                "width": 320,
+                "height": 180,
+                "file_size": 5967
+            },
+            {
+                "_": "Thumbnail",
+                "file_id": "AgACAgUAAx0EXTPhZQACAr5kGAr5S4KGcXzNx2qlW5KHYpSVxAACyLUxG3lGwVStEvo6fjbmrgAIAQADAgADeAAHHgQ",
+                "file_unique_id": "AgADyLUxG3lGwVQ",
+                "width": 800,
+                "height": 450,
+                "file_size": 18355
+            }
+        ]
+    },
+    "caption": "gay",
+    "views": 1,
+    "forwards": 0,
+    "outgoing": true,
+    "reply_markup": {
+        "_": "InlineKeyboardMarkup",
+        "inline_keyboard": [
+            [
+                {
+                    "_": "InlineKeyboardButton",
+                    "text": "Watch",
+                    "callback_data": "get_144"
+                }
+            ]
+        ]
+    }
+}
+2023-03-20 07:32:17,918 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 07:32:19,554 INFO MainThread pyrogram.dispatcher Stopped 20 HandlerTasks
+2023-03-20 07:32:19,554 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:32:19,555 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:32:19,555 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:32:19,555 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:47:18,271 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:47:18,468 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:47:18,627 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:47:18,628 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:47:19,322 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:47:19,322 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:47:19,322 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:47:19,322 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:47:19,324 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:47:20,302 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 07:47:20,302 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 07:47:20,516 INFO MainThread root {
+    "_": "User",
+    "id": 6108827735,
+    "is_self": true,
+    "is_contact": false,
+    "is_mutual_contact": false,
+    "is_deleted": false,
+    "is_bot": true,
+    "is_verified": false,
+    "is_restricted": false,
+    "is_scam": false,
+    "is_fake": false,
+    "is_support": false,
+    "is_premium": false,
+    "first_name": "bb",
+    "username": "sjsjvs_bot"
+}
+2023-03-20 07:47:39,124 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:47:39,280 INFO MainThread pyrogram.connection.connection Connected! Production DC5 (media) - IPv4
+2023-03-20 07:47:39,280 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:47:39,955 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:47:39,955 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:47:39,955 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:47:39,955 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:47:39,957 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:47:46,189 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:47:46,190 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:47:46,190 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:47:46,190 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:47:47,074 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:47:47,231 INFO MainThread pyrogram.connection.connection Connected! Production DC5 (media) - IPv4
+2023-03-20 07:47:47,231 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:47:47,912 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:47:47,912 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:47:47,912 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:47:47,913 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:47:47,913 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:47:48,578 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:47:48,579 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:47:48,579 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:47:48,579 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:47:49,161 INFO Handler_0 root {
+    "_": "Message",
+    "id": 703,
+    "sender_chat": {
+        "_": "Chat",
+        "id": -1001563681125,
+        "type": "ChatType.CHANNEL",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_creator": false,
+        "is_scam": false,
+        "is_fake": false,
+        "title": "Anime Ongoing Region",
+        "username": "Anime_Region_Ongoing",
+        "has_protected_content": false
+    },
+    "date": "2023-03-20 07:47:49",
+    "chat": {
+        "_": "Chat",
+        "id": -1001563681125,
+        "type": "ChatType.CHANNEL",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_creator": false,
+        "is_scam": false,
+        "is_fake": false,
+        "title": "Anime Ongoing Region",
+        "username": "Anime_Region_Ongoing",
+        "has_protected_content": false
+    },
+    "mentioned": false,
+    "scheduled": false,
+    "from_scheduled": false,
+    "media": "MessageMediaType.PHOTO",
+    "has_protected_content": false,
+    "has_media_spoiler": false,
+    "photo": {
+        "_": "Photo",
+        "file_id": "AgACAgUAAx0EXTPhZQACAr9kGA-kD7_4tw4s1FjK8dmJeS2aDAACz7UxG3lGwVS020Qja-mfYgAIAQADAgADdwAHHgQ",
+        "file_unique_id": "AgADz7UxG3lGwVQ",
+        "width": 1920,
+        "height": 1080,
+        "file_size": 57284,
+        "date": "2023-03-20 07:47:48",
+        "thumbs": [
+            {
+                "_": "Thumbnail",
+                "file_id": "AgACAgUAAx0EXTPhZQACAr9kGA-kD7_4tw4s1FjK8dmJeS2aDAACz7UxG3lGwVS020Qja-mfYgAIAQADAgADcwAHHgQ",
+                "file_unique_id": "AgADz7UxG3lGwVQ",
+                "width": 90,
+                "height": 51,
+                "file_size": 946
+            },
+            {
+                "_": "Thumbnail",
+                "file_id": "AgACAgUAAx0EXTPhZQACAr9kGA-kD7_4tw4s1FjK8dmJeS2aDAACz7UxG3lGwVS020Qja-mfYgAIAQADAgADbQAHHgQ",
+                "file_unique_id": "AgADz7UxG3lGwVQ",
+                "width": 320,
+                "height": 180,
+                "file_size": 6802
+            },
+            {
+                "_": "Thumbnail",
+                "file_id": "AgACAgUAAx0EXTPhZQACAr9kGA-kD7_4tw4s1FjK8dmJeS2aDAACz7UxG3lGwVS020Qja-mfYgAIAQADAgADeAAHHgQ",
+                "file_unique_id": "AgADz7UxG3lGwVQ",
+                "width": 800,
+                "height": 450,
+                "file_size": 20431
+            }
+        ]
+    },
+    "caption": "gay",
+    "views": 1,
+    "forwards": 0,
+    "outgoing": true,
+    "reply_markup": {
+        "_": "InlineKeyboardMarkup",
+        "inline_keyboard": [
+            [
+                {
+                    "_": "InlineKeyboardButton",
+                    "text": "Watch",
+                    "url": "https://t.me/IcyHotRobot?start=145"
+                }
+            ]
+        ]
+    }
+}
+2023-03-20 07:48:26,578 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 07:48:29,380 INFO MainThread pyrogram.dispatcher Stopped 20 HandlerTasks
+2023-03-20 07:48:29,380 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:48:29,381 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:48:29,381 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:48:29,381 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:48:31,427 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:48:31,624 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:48:31,783 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:48:31,784 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:48:32,475 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:48:32,475 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:48:32,475 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:48:32,475 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:48:32,477 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:48:33,392 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 07:48:33,392 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 07:48:33,568 INFO MainThread root {
+    "_": "User",
+    "id": 6108827735,
+    "is_self": true,
+    "is_contact": false,
+    "is_mutual_contact": false,
+    "is_deleted": false,
+    "is_bot": true,
+    "is_verified": false,
+    "is_restricted": false,
+    "is_scam": false,
+    "is_fake": false,
+    "is_support": false,
+    "is_premium": false,
+    "first_name": "bb",
+    "username": "sjsjvs_bot"
+}
+2023-03-20 07:48:43,325 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:48:43,482 INFO MainThread pyrogram.connection.connection Connected! Production DC5 (media) - IPv4
+2023-03-20 07:48:43,483 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:48:44,173 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:48:44,173 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:48:44,173 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:48:44,173 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:48:44,175 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:48:50,809 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:48:50,809 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:48:50,809 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:48:50,810 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:48:51,604 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:48:51,763 INFO MainThread pyrogram.connection.connection Connected! Production DC5 (media) - IPv4
+2023-03-20 07:48:51,763 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:48:52,454 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:48:52,454 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:48:52,454 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:48:52,454 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:48:52,455 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:48:53,103 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:48:53,104 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:48:53,104 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:48:53,104 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:48:53,606 INFO Handler_0 root {
+    "_": "Message",
+    "id": 704,
+    "sender_chat": {
+        "_": "Chat",
+        "id": -1001563681125,
+        "type": "ChatType.CHANNEL",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_creator": false,
+        "is_scam": false,
+        "is_fake": false,
+        "title": "Anime Ongoing Region",
+        "username": "Anime_Region_Ongoing",
+        "has_protected_content": false
+    },
+    "date": "2023-03-20 07:48:53",
+    "chat": {
+        "_": "Chat",
+        "id": -1001563681125,
+        "type": "ChatType.CHANNEL",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_creator": false,
+        "is_scam": false,
+        "is_fake": false,
+        "title": "Anime Ongoing Region",
+        "username": "Anime_Region_Ongoing",
+        "has_protected_content": false
+    },
+    "mentioned": false,
+    "scheduled": false,
+    "from_scheduled": false,
+    "media": "MessageMediaType.PHOTO",
+    "has_protected_content": false,
+    "has_media_spoiler": false,
+    "photo": {
+        "_": "Photo",
+        "file_id": "AgACAgUAAx0EXTPhZQACAsBkGA_lPBxqY8vhFxedXTMCFJyqtgAC0LUxG3lGwVSEAyZM26oTJAAIAQADAgADdwAHHgQ",
+        "file_unique_id": "AgAD0LUxG3lGwVQ",
+        "width": 1920,
+        "height": 1080,
+        "file_size": 58804,
+        "date": "2023-03-20 07:48:53",
+        "thumbs": [
+            {
+                "_": "Thumbnail",
+                "file_id": "AgACAgUAAx0EXTPhZQACAsBkGA_lPBxqY8vhFxedXTMCFJyqtgAC0LUxG3lGwVSEAyZM26oTJAAIAQADAgADcwAHHgQ",
+                "file_unique_id": "AgAD0LUxG3lGwVQ",
+                "width": 90,
+                "height": 51,
+                "file_size": 958
+            },
+            {
+                "_": "Thumbnail",
+                "file_id": "AgACAgUAAx0EXTPhZQACAsBkGA_lPBxqY8vhFxedXTMCFJyqtgAC0LUxG3lGwVSEAyZM26oTJAAIAQADAgADbQAHHgQ",
+                "file_unique_id": "AgAD0LUxG3lGwVQ",
+                "width": 320,
+                "height": 180,
+                "file_size": 6962
+            },
+            {
+                "_": "Thumbnail",
+                "file_id": "AgACAgUAAx0EXTPhZQACAsBkGA_lPBxqY8vhFxedXTMCFJyqtgAC0LUxG3lGwVSEAyZM26oTJAAIAQADAgADeAAHHgQ",
+                "file_unique_id": "AgAD0LUxG3lGwVQ",
+                "width": 800,
+                "height": 450,
+                "file_size": 20867
+            }
+        ]
+    },
+    "caption": "gay",
+    "views": 1,
+    "forwards": 0,
+    "outgoing": true,
+    "reply_markup": {
+        "_": "InlineKeyboardMarkup",
+        "inline_keyboard": [
+            [
+                {
+                    "_": "InlineKeyboardButton",
+                    "text": "Watch",
+                    "url": "https://t.me/IcyHotRobot?start=146"
+                }
+            ]
+        ]
+    }
+}
+2023-03-20 07:49:46,128 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 07:49:47,535 INFO MainThread pyrogram.dispatcher Stopped 20 HandlerTasks
+2023-03-20 07:49:47,536 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:49:47,537 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:49:47,537 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:49:47,537 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:50:19,845 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:50:20,037 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:50:20,199 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:50:20,200 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:50:20,905 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:50:20,906 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:50:20,906 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:50:20,906 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:50:20,907 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:50:21,965 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 07:50:21,966 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 07:50:22,156 INFO MainThread root {
+    "_": "User",
+    "id": 6108827735,
+    "is_self": true,
+    "is_contact": false,
+    "is_mutual_contact": false,
+    "is_deleted": false,
+    "is_bot": true,
+    "is_verified": false,
+    "is_restricted": false,
+    "is_scam": false,
+    "is_fake": false,
+    "is_support": false,
+    "is_premium": false,
+    "first_name": "bb",
+    "username": "sjsjvs_bot"
+}
+2023-03-20 07:50:26,667 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:50:26,825 INFO MainThread pyrogram.connection.connection Connected! Production DC5 (media) - IPv4
+2023-03-20 07:50:26,825 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:50:27,518 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:50:27,518 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:50:27,518 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:50:27,518 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:50:27,520 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:50:33,779 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:50:33,779 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:50:33,780 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:50:33,780 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:50:34,704 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:50:34,861 INFO MainThread pyrogram.connection.connection Connected! Production DC5 (media) - IPv4
+2023-03-20 07:50:34,861 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:50:35,543 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:50:35,543 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:50:35,544 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:50:35,544 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:50:35,544 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:50:36,185 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:50:36,185 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:50:36,186 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:50:36,186 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:53:08,851 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 07:53:11,040 INFO MainThread pyrogram.dispatcher Stopped 20 HandlerTasks
+2023-03-20 07:53:11,041 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 07:53:11,041 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 07:53:11,042 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 07:53:11,042 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 07:53:14,594 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:53:14,794 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:53:14,953 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:53:14,954 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:53:15,630 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:53:15,630 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:53:15,630 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:53:15,630 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:53:15,632 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:54:22,003 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:54:22,200 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:54:22,362 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:54:22,363 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:54:23,169 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:54:23,169 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:54:23,169 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:54:23,169 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:54:23,171 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:54:27,071 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:55:48,113 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:56:43,510 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:56:55,335 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:57:20,244 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:57:40,441 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 07:57:40,648 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 07:57:40,807 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 07:57:40,807 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 07:57:41,503 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 07:57:41,503 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 07:57:41,504 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 07:57:41,504 INFO MainThread pyrogram.session.session Session started
+2023-03-20 07:57:41,505 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 07:57:42,388 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 08:00:19,302 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 08:00:19,485 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 08:00:19,644 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 08:00:19,644 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 08:00:20,362 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 08:00:20,362 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 08:00:20,362 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 08:00:20,362 INFO MainThread pyrogram.session.session Session started
+2023-03-20 08:00:20,364 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 08:00:21,325 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 08:00:50,594 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 08:00:50,790 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 08:00:50,949 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 08:00:50,950 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 08:00:51,650 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 08:00:51,650 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 08:00:51,651 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 08:00:51,651 INFO MainThread pyrogram.session.session Session started
+2023-03-20 08:00:51,652 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 08:00:52,637 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 08:00:52,638 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 08:00:52,638 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 08:00:58,084 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 08:01:50,941 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 08:01:51,136 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 08:01:51,296 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 08:01:51,297 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 08:01:51,983 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 08:01:51,984 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 08:01:51,984 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 08:01:51,984 INFO MainThread pyrogram.session.session Session started
+2023-03-20 08:01:51,985 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 08:01:52,917 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 08:02:12,859 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 08:02:13,040 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 08:02:13,202 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 08:02:13,203 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 08:02:13,891 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 08:02:13,891 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 08:02:13,891 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 08:02:13,891 INFO MainThread pyrogram.session.session Session started
+2023-03-20 08:02:13,893 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 08:02:14,808 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 08:03:42,230 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 08:03:42,424 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 08:03:42,586 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 08:03:42,586 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 08:03:43,302 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 08:03:43,302 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 08:03:43,302 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 08:03:43,302 INFO MainThread pyrogram.session.session Session started
+2023-03-20 08:03:43,303 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 08:03:44,293 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 08:03:44,293 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 08:03:57,985 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 08:03:58,145 INFO MainThread pyrogram.connection.connection Connected! Production DC5 (media) - IPv4
+2023-03-20 08:03:58,145 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 08:03:58,896 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 08:03:58,896 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 08:03:58,896 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 08:03:58,896 INFO MainThread pyrogram.session.session Session started
+2023-03-20 08:03:58,898 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 08:04:05,398 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 08:04:05,398 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 08:04:05,398 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 08:04:05,398 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 08:04:06,449 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 08:04:06,610 INFO MainThread pyrogram.connection.connection Connected! Production DC5 (media) - IPv4
+2023-03-20 08:04:06,611 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 08:04:07,306 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 08:04:07,306 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 08:04:07,306 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 08:04:07,307 INFO MainThread pyrogram.session.session Session started
+2023-03-20 08:04:07,307 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 08:04:07,970 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 08:04:07,970 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 08:04:07,971 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 08:04:07,971 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 08:05:16,369 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 08:05:18,384 INFO MainThread pyrogram.dispatcher Stopped 20 HandlerTasks
+2023-03-20 08:05:18,385 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 08:05:18,385 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 08:05:18,386 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 08:05:18,386 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 08:06:19,655 INFO MainThread root Starting autoanimebot, uwu.
+2023-03-20 08:06:19,856 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 08:06:20,016 INFO MainThread pyrogram.connection.connection Connected! Production DC5 - IPv4
+2023-03-20 08:06:20,017 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 08:06:20,702 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 08:06:20,702 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 08:06:20,702 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 08:06:20,702 INFO MainThread pyrogram.session.session Session started
+2023-03-20 08:06:20,703 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 08:06:21,599 WARNING MainThread pyrogram.client [AutoAnimeBot] No plugin loaded from "main/modules"
+2023-03-20 08:06:21,600 INFO MainThread pyrogram.dispatcher Started 20 HandlerTasks
+2023-03-20 08:06:39,980 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 08:06:40,137 INFO MainThread pyrogram.connection.connection Connected! Production DC5 (media) - IPv4
+2023-03-20 08:06:40,137 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 08:06:40,827 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 08:06:40,827 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 08:06:40,827 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 08:06:40,827 INFO MainThread pyrogram.session.session Session started
+2023-03-20 08:06:40,829 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 08:06:45,258 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 08:06:45,258 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 08:06:45,258 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 08:06:45,259 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 08:06:46,308 INFO MainThread pyrogram.connection.connection Connecting...
+2023-03-20 08:06:46,467 INFO MainThread pyrogram.connection.connection Connected! Production DC5 (media) - IPv4
+2023-03-20 08:06:46,468 INFO MainThread pyrogram.session.session NetworkTask started
+2023-03-20 08:06:47,255 INFO MainThread pyrogram.session.session Session initialized: Layer 152
+2023-03-20 08:06:47,256 INFO MainThread pyrogram.session.session Device: CPython 3.8.16 - Pyrogram 2.0.102
+2023-03-20 08:06:47,256 INFO MainThread pyrogram.session.session System: Linux 5.15.0-47-generic (en)
+2023-03-20 08:06:47,256 INFO MainThread pyrogram.session.session Session started
+2023-03-20 08:06:47,256 INFO MainThread pyrogram.session.session PingTask started
+2023-03-20 08:06:47,906 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 08:06:47,907 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 08:06:47,907 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 08:06:47,907 INFO MainThread pyrogram.session.session Session stopped
+2023-03-20 08:07:46,494 INFO MainThread root Stop signal received (SIGINT). Exiting...
+2023-03-20 08:07:50,783 INFO MainThread pyrogram.dispatcher Stopped 20 HandlerTasks
+2023-03-20 08:07:50,784 INFO MainThread pyrogram.session.session PingTask stopped
+2023-03-20 08:07:50,785 INFO MainThread pyrogram.connection.connection Disconnected
+2023-03-20 08:07:50,785 INFO MainThread pyrogram.session.session NetworkTask stopped
+2023-03-20 08:07:50,785 INFO MainThread pyrogram.session.session Session stopped
