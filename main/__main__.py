@@ -1,5 +1,5 @@
 from main import bot
-for main.modules.schedule import send_anime_schedule
+from main.modules.schedule import send_anime_schedule
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime
 
