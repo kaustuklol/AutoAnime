@@ -3,9 +3,10 @@ from main.modules.schedule import send_anime_schedule
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime
 
-time = str(datetime.now())
+time = datetime.now()
 def check():
-  if time.hour == "9":
+  print(time.hour)
+  if time.hour == 9:
     send_anime_schedule()
 
 
