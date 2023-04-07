@@ -10,4 +10,4 @@ RUN apt-get update && \
 
 ENV TZ="Asia/Kolkata"
 
-CMD python3 -m AutoAnimeBot
+CMD python3 -m main/__main__.py
