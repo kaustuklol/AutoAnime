@@ -1,10 +1,7 @@
-aiohttp
 pyrogram
 TgCrypto
 pillow
 requests
-bs4
 opencv-python-headless
-aiofiles
-techzapi
-apscheduler
+opencv-python
+asyncio
