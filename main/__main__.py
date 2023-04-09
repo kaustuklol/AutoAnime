@@ -105,6 +105,13 @@ async def start_command(client, message):
     else:
         try:
             id = int(id.replace(" ", ""))
+            from force_sub import handle_force_subscribe
+            fsub = await handle_force_subscribe(bot, message)
+            if fsub == 400:
+                return
+            else:
+                await bot.copy_message(message.chat.id, PRIVATE_CHANNEL_ID, id)
+                                    
             await bot.copy_message(message.chat.id, PRIVATE_CHANNEL_ID, id)
         except:
             message_text = "Hey there! thanks for starting me ~\n\nI am an automated anime uploader bot working on @Anime_Region_Ongoing\n\nJoin our other channels to connect with our community!"
