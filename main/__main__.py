@@ -105,7 +105,7 @@ async def start_command(client, message):
     else:
         try:
             id = int(id.replace(" ", ""))
-            from force_sub import handle_force_subscribe
+            from main.modules.force_sub import handle_force_subscribe
             fsub = await handle_force_subscribe(bot, message)
             if fsub == 400:
                 return
