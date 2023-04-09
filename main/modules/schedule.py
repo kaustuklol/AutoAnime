@@ -1,12 +1,9 @@
 import requests
-import math
 from main import bot
 from pyrogram.types import Message
-from pyrogram.enums import ParseMode
+from config import PUBLIC_CHANNEL_ID
 
-
-
-async def get_scheduled_animes():
+def get_scheduled_animes():
     url = 'https://subsplease.org/api/?f=schedule&h=true&tz=IST'
     res = requests.get(url).json()['schedule']
 
@@ -16,24 +13,26 @@ async def get_scheduled_animes():
         x['title'] = i['title']
         x['link'] = "https://subsplease.org/shows/" + i['page']
         x['time'] = i['time']
+        x['aired'] = i['aired']
         animes.append(x)
 
     return animes
-
-def send_anime_schedule():
+    
+async def send_anime_schedule():
     animes = get_scheduled_animes()
     text = "<b>📆 Today's Schedule</b> \n\n"
-
-    for i in animes:
-        text += '<b>[</b><code>{}</code><b>] - 📌 <a href="{}">{}</a></b>\n'.format(
-            i["time"],
-            i["link"],
-            i["title"]
-        )
-
+    if animes == []:
+        text += "<b>No Anime Airing Today.</b>\n"
+    else:
+        for i in animes:
+                text += '<b>[</b><code>{}</code><b>] - 📌 {}</b>\n\n'.format(
+                    i["time"],
+                    i["title"]
+                )
     text += "\n<b>⏰ Current TimeZone :</b> <code>IST (UTC +5:30)</code>"
-
+    text += "\n\n<b>❗️ Note :</b> This is not when episodes will be uploaded on channel, it's when they will be released by subsplease"
     try:
-        bot.send_photo(PUBLIC_CHANNEL_ID, "main/mizuhara.jpg", caption=text)
-    except:
-        pass
+        msg = await bot.send_photo(PUBLIC_CHANNEL_ID, photo="main/mizuhara.jpg", caption=text)
+    except Exception as e:
+        print(e)
+    return msg
