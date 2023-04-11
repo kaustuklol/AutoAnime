@@ -18,13 +18,11 @@ logger = logging.getLogger("Bot")
 async def update_queue(title):
     title = title.replace("'", "").replace(".", "").replace("-", "").replace("!", "").replace("S2", "Season 2").replace("S3", "Season 3").replace("S4", "Season 4")
     queue.add(title)
-
+animes = []
 async def check_condition():
     print(queue)
     while True:
-        animes = get_scheduled_animes()
         current = datetime.now()
-
         if current.hour == 0 or current.hour == 00 and current.minute<2:
             try:
                 animes = get_scheduled_animes()
