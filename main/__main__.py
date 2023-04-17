@@ -1,91 +1,65 @@
 from main import bot
-from main.modules.schedule import send_anime_schedule, get_scheduled_animes
+from main.modules.schedule import send_anime_schedule
 from datetime import datetime
-from config import queue, PRIVATE_CHANNEL_ID, PUBLIC_CHANNEL_ID
+from config import downloaded, PRIVATE_CHANNEL_ID, PUBLIC_CHANNEL_ID
 import asyncio
-from main.modules.anilist import fetch_anime_info
-from main.modules.api import anime_url
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from main.modules.downloader import downloader
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton 
+from pyrogram import Client, filters
 import main.modules.sudo
 from main.modules.upload import uploader
 from main.modules.thumbnail import gen_thumb, gen_cover
-
+import os
+from main.modules.scraper import check_anime
+from AnilistPython import Anilist
+from torrentp import TorrentDownloader
 import logging
 
+anilist = Anilist()
 logger = logging.getLogger("Bot")
 
-async def update_queue(title):
-    title = title.replace("'", "").replace(".", "").replace("-", "").replace("!", "").replace("S2", "Season 2").replace("S3", "Season 3").replace("S4", "Season 4")
-    queue.add(title)
-animes = []
+async def main():
+    animes = await check_anime()
+    for anime in animes:
+        info = await anilist.get_anime(anime['category'])
+        if info['name_english'] not in downloaded:
+            try:
+                try: 
+                    torrent_file = await TorrentDownloader(anime['link'], 'ep/')
+                except e:
+                    torrent_file = TorrentDownloader(anime['link'], 'ep/')
+                    
+                if int(info['next_airing_ep']['episode']) > 1:
+                    airing_ep = int(info['next_airing_ep']['episode'])-1
+                
+                path = f"ep/{anime['title']}"    
+                title = f"{info['name_english']} - {airing_ep} @Anime_Region_Ongoing"
+
+                cover = await gen_cover(path) 
+                logger.info(f"Generating thumbnail of: {info['name_english']}")
+                thumb = await gen_thumb(info['name_english'], "Anime_Region", info['genres'], cover)
+
+                logger.info(f"Uploading {info['name_english']}")
+                await uploader(path, thumb, title)
+
+                downloaded.add(info['name_english'])
+                os.remove(f"ep/{anime['title']}")
+            except Exception as e:
+                print(f"err - {e}")
+
 async def check_condition():
-    print(queue)
     while True:
         current = datetime.now()
+
         if current.hour == 0 or current.hour == 00 and current.minute<2:
             try:
-                animes = get_scheduled_animes()
                 msg = await send_anime_schedule()  
                 await bot.send_message(PRIVATE_CHANNEL_ID, f"queue: {queue}")
                 pin = await bot.pin_chat_message(PUBLIC_CHANNEL_ID, message_id=msg.id)
                 await bot.delete_messages(PUBLIC_CHANNEL_ID, pin.id)
             except:
                 pass
-
-        for anime in animes:
-          if anime['aired'] is True:
-            update_queue(anime['title'])
-            animes.remove(anime)
             
-        if len(queue)>0:
-            for anime in queue:
-                try:
-                    # Search for Anime
-                    try:
-                        logger.info(f"Currently Working on - {anime}")
-                        info = fetch_anime_info(anime['title'])
-                    except Exception as e:
-                        logger.info(f"Anilist Error Cannot find info of anime named {anime} Error: {e}")
-                        break
-                    
-                    # Fetching url of anime techzapi
-                    try:
-                        logger.info(f"FetchingUrl of {anime}")
-                        url = anime_url("UBDVXP", info['title_english'], info['latest_episode']-1)
-                    except Exception as e:
-                        logger.info(f"Error Cannot fetch url of {anime} Error: {e}")  
-                        break
-                        
-                    # Download file and generate cover
-                    try:
-                        title = f"{info['title_english']} - {info['latest_episode']} @Anime_Region_Ongoing"
-                        path = await downloader(url, title)
-                        path = f"ep/{title}.mp4"
-                        cover = await gen_cover(path) 
-                        
-                    except Exception as e:
-                        logger.info(f"Error Occured in downloading or creating cover of {info['title_english']} - {e}")
-                        break
-                        
-                    # Generating thumbnail of anime
-                    try:        
-                        logger.info(f"Generating thumbnail of: {info['title_english']}")
-                        thumb = await gen_thumb(info['title_english'], info['studio'], info['genres'], cover)
-                    except Exception as e:
-                        logger.info(f"thumb err - {e}")
-                        break
-                    
-                    # Uploading
-                    try:
-                        logger.info(f"Uploading {info['title_english']}"
-                        await uploader(path, thumb, title)
-                    except Exception as e:
-                        logger.info(f"upload err - {e}")
-                        break
-                    queue.remove(anime['title'])
-                except Exception as e:
-                    logger.warning(e)
+        await main()
                         
         await asyncio.sleep(60) 
                                     

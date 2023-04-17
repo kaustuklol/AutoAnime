@@ -11,7 +11,7 @@ async def uploader(file, thumb, title):
     async def progress(current, total):
         uploaded = f"{current * 100 / total:.1f}%"
         logger.info(f"Uploaded: {uploaded}")
-        await bot.send_message(PRIVATE_CHANNEL_ID, f"{file}, Uploaded: {uploaded}")
+#         await bot.send_message(PRIVATE_CHANNEL_ID, f"{file}, Uploaded: {uploaded}")
 
     msg = await bot.send_video(PRIVATE_CHANNEL_ID, file, progress=progress)
     id = msg.id

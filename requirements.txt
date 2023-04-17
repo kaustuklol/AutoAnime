@@ -3,5 +3,12 @@ TgCrypto
 pillow
 requests
 opencv-python-headless
-opencv-python
 asyncio
+pip
+setuptools 
+wheel
+pyrogram>=2.0
+bs4
+AnilistPython
+torrentp
+feedparser
