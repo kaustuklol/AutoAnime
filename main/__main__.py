@@ -1,50 +1,48 @@
 from main import bot
-from main.modules.schedule import send_anime_schedule
+from main.modules.schedule import send_anime_schedule, get_scheduled_animes
 from datetime import datetime
-from config import downloaded, PRIVATE_CHANNEL_ID, PUBLIC_CHANNEL_ID
+from config import queue, PRIVATE_CHANNEL_ID, PUBLIC_CHANNEL_ID
 import asyncio
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton 
 from pyrogram import Client, filters
 import main.modules.sudo
-from main.modules.upload import uploader
-from main.modules.thumbnail import gen_thumb, gen_cover
 import os
-from main.modules.scraper import check_anime
 from AnilistPython import Anilist
-from torrentp import TorrentDownloader
 import logging
-
+from main.modules.utils import purify, r_char
+from main.modules.downloader import download_anime
+from main.modules.consumet import m3u8_fetcher
+from main.modules.upload import upload
+animes = []
 anilist = Anilist()
 logger = logging.getLogger("Bot")
 
 async def main():
-    animes = await check_anime()
-    for anime in animes:
-        info = await anilist.get_anime(anime['category'])
-        if info['name_english'] not in downloaded:
+    try:
+        animes = await get_scheduled_animes()
+        for anime in animes:
+            if anime['aired'] == True:
+                queue.add(anime['title'])
+                animes.remove(anime)
+    except:
+        pass
+    while queue != {}:
+        for item in queue:
             try:
-                try: 
-                    torrent_file = await TorrentDownloader(anime['link'], 'ep/')
-                except e:
-                    torrent_file = TorrentDownloader(anime['link'], 'ep/')
-                    
-                if int(info['next_airing_ep']['episode']) > 1:
-                    airing_ep = int(info['next_airing_ep']['episode'])-1
-                
-                path = f"ep/{anime['title']}"    
-                title = f"{info['name_english']} - {airing_ep} @Anime_Region_Ongoing"
-
-                cover = await gen_cover(path) 
-                logger.info(f"Generating thumbnail of: {info['name_english']}")
-                thumb = await gen_thumb(info['name_english'], "Anime_Region", info['genres'], cover)
-
-                logger.info(f"Uploading {info['name_english']}")
-                await uploader(path, thumb, title)
-
-                downloaded.add(info['name_english'])
-                os.remove(f"ep/{anime['title']}")
+                item = purify(item)
+                anime = anilist.get_anime(r_char(item))
+                # print(anime)
+                logger.info(f"Searching - {anime['name_english']}")
+                url = await m3u8_fetcher(anime)
+                logger.info("Links fetched")
+                # print(url)
+                path = await download_anime(url, anime['name_english'])
+                logger.info("Anime Downloaded")
+                await upload(path)
+                logger.info("Anime Uploaded")
+                queue.remove(item)
             except Exception as e:
-                print(f"err - {e}")
+                logger.warning(e)
 
 async def check_condition():
     while True:
@@ -93,5 +91,19 @@ async def start_command(client, message):
 
             btns = InlineKeyboardMarkup([[anime_button, group_button], [ongoing_anime_button]])
             await bot.send_photo(message.chat.id, photo="main/start.jpg", caption=message_text, reply_markup=btns)
+       
+
+@bot.on_message(filters.command("refresh"))
+async def refresh(client, message):
+    await message.reply_text("refreshing...")
+    animes = await get_scheduled_animes()
+    
+@bot.on_message(filters.command("add"))
+async def refresh(client, message):
+    anime = message.text.replace("/add", "")
+    queue.add(anime)
+    await message.reply_text("adding...")
+
+
 with bot:
     bot.loop.run_until_complete(check_condition())
