@@ -16,7 +16,7 @@ from main.modules.upload import upload
 animes = []
 anilist = Anilist()
 logger = logging.getLogger("Bot")
-
+logger.info("Bot Started uwu!")
 async def main():
     try:
         animes = await get_scheduled_animes()
