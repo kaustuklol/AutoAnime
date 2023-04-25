@@ -106,5 +106,4 @@ async def refresh(client, message):
 
 
 with bot:
-    bot.start()
     bot.loop.run_until_complete(check_condition())
