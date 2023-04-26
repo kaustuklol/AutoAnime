@@ -65,5 +65,5 @@ async def download_anime(m3u8_url, final):
     else:
         logger.info(output.decode('utf-8'))
     os.remove("ep/compressed.mp4")
-    return os.path.abspath("ep/final.mp4")
+    return ("ep/final.mp4")
 
