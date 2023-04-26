@@ -17,49 +17,11 @@ animes = []
 anilist = Anilist()
 logger = logging.getLogger("Bot")
 logger.info("Bot Started uwu!")
+
+
 async def main():
-    try:
-        animes = await get_scheduled_animes()
-        for anime in animes:
-            if anime['aired'] == True:
-                queue.add(anime['title'])
-                animes.remove(anime)
-    except:
-        pass
-    while queue != {}:
-        for item in queue:
-            try:
-                item = purify(item)
-                anime = anilist.get_anime(r_char(item))
-                # print(anime)
-                logger.info(f"Searching - {anime['name_english']}")
-                url = await m3u8_fetcher(anime)
-                logger.info("Links fetched")
-                # print(url)
-                path = await download_anime(url, anime['name_english'])
-                logger.info("Anime Downloaded")
-                await upload(path)
-                logger.info("Anime Uploaded")
-                queue.remove(item)
-            except Exception as e:
-                logger.warning(e)
-
-async def check_condition():
-    while True:
-        current = datetime.now()
-
-        if current.hour == 0 or current.hour == 00 and current.minute<2:
-            try:
-                msg = await send_anime_schedule()  
-                await bot.send_message(PRIVATE_CHANNEL_ID, f"queue: {queue}")
-                pin = await bot.pin_chat_message(PUBLIC_CHANNEL_ID, message_id=msg.id)
-                await bot.delete_messages(PUBLIC_CHANNEL_ID, pin.id)
-            except:
-                pass
-            
-        await main()
-                        
-        await asyncio.sleep(60) 
+    bot.send_message(PUBLIC_CHANNEL_ID, "Hey, I'm Back And working fine af!")
+    await asyncio.sleep(60) 
                                     
 @bot.on_message(filters.command("start"))
 async def start_command(client, message):
@@ -106,4 +68,4 @@ async def refresh(client, message):
 
 
 with bot:
-    bot.loop.run_until_complete(check_condition())
+    bot.loop.run_until_complete(main())
