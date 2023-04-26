@@ -67,7 +67,7 @@ async def refresh(client, message):
     animes = await get_scheduled_animes()
     for anime in animes:
         queue.add(anime['title'])
-        await message.reply_text(queue)
+    await message.reply_text(queue)
     
 @bot.on_message(filters.command("add"))
 async def refresh(client, message):
