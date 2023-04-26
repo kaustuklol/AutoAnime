@@ -1,6 +1,7 @@
 import requests
 import asyncio
 from main.modules.utils import trim, r_char
+import os
 
 async def m3u8_fetcher(anime):
     base = "https://api.consumet.org/anime/zoro/"
@@ -42,6 +43,9 @@ async def m3u8_fetcher(anime):
     r = requests.get(url)
     # print(url)
     results = r.json()
+    if not os.path.exists("subtitles"):
+        os.makedirs("subtitles")
+        
     for subtitle in results['subtitles']:
         if subtitle['lang'] == "English":
             url = subtitle['url']
