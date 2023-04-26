@@ -19,7 +19,7 @@ async def get_scheduled_animes():
     return animes
     
 async def send_anime_schedule():
-    animes = get_scheduled_animes()
+    animes = await get_scheduled_animes()
     text = "<b>📆 Today's Schedule</b> \n\n"
     if animes == []:
         text += "<b>No Anime Airing Today.</b>\n"
@@ -30,7 +30,6 @@ async def send_anime_schedule():
                     i["title"]
                 )
     text += "\n<b>⏰ Current TimeZone :</b> <code>IST (UTC +5:30)</code>"
-    text += "\n\n<b>❗️ Note :</b> This is not when episodes will be uploaded on channel, it's when they will be released by subsplease"
     try:
         msg = await bot.send_photo(PUBLIC_CHANNEL_ID, photo="main/mizuhara.jpg", caption=text)
     except Exception as e:
