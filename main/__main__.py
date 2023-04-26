@@ -30,6 +30,8 @@ async def main():
                 logger.info(f"- Fetching Url -> {anime['name_english']}")
                 url = await m3u8_fetcher(anime)
                 logger.info(url)
+                path = await download_anime(url, anime['name_english'])
+                await upload(path, anime)
         await bot.send_message(PUBLIC_CHANNEL_ID, "Hey, I'm Back And working fine af!")
         await asyncio.sleep(10) 
                                     
