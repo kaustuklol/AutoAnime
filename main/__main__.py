@@ -32,7 +32,7 @@ async def main():
                 logger.info(url)
 #                 path = await download_anime(url, anime['name_english'])
 #                 await upload(path, anime)
-                await upload("final.mp4", anime)
+                await upload("AutoAnime/final.mp4", anime)
         await bot.send_message(PUBLIC_CHANNEL_ID, "Hey, I'm Back And working fine af!")
         await asyncio.sleep(10) 
                                     
