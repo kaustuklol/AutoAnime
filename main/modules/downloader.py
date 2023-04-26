@@ -45,7 +45,7 @@ async def download_anime(m3u8_url, final):
 #     subprocess.run(args)
 #     logger.info("done")
 
-    args = ["ffmpeg", "-i", "output.mp4", "-c:v", "libx265", "-c:a", "copy", "-preset", "veryfast", "compressed.mp4")
+    args = ["ffmpeg", "-i", "output.mp4", "-c:v", "libx265", "-c:a", "copy", "-preset", "veryfast", "compressed.mp4"]
 #     command = 'ffmpeg -i output.mp4 -c:v libx265 -c:a copy -preset veryfast compressed.mp4'
 #     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 #     output, error = process.communicate()
