@@ -20,8 +20,9 @@ logger.info("Bot Started uwu!")
 
 
 async def main():
-    await bot.send_message(PUBLIC_CHANNEL_ID, "Hey, I'm Back And working fine af!")
-    await asyncio.sleep(60) 
+    While True:
+        await bot.send_message(PUBLIC_CHANNEL_ID, "Hey, I'm Back And working fine af!")
+        await asyncio.sleep(60) 
                                     
 @bot.on_message(filters.command("start"))
 async def start_command(client, message):
