@@ -31,7 +31,7 @@ async def main():
                 url = await m3u8_fetcher(anime)
                 logger.info(url)
         await bot.send_message(PUBLIC_CHANNEL_ID, "Hey, I'm Back And working fine af!")
-        await asyncio.sleep(60) 
+        await asyncio.sleep(10) 
                                     
 @bot.on_message(filters.command("start"))
 async def start_command(client, message):
