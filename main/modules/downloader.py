@@ -13,25 +13,25 @@ async def download_anime(m3u8_url, final):
         os.makedirs("ts")
     if not os.path.exists("ep"):
         os.makedirs("ep")
-    m3u8_content = requests.get(m3u8_url).text
+#     m3u8_content = requests.get(m3u8_url).text
 
-    ts_urls = [line.strip() for line in m3u8_content.split('\n') if line.strip().endswith('.ts')]
+#     ts_urls = [line.strip() for line in m3u8_content.split('\n') if line.strip().endswith('.ts')]
 
-    for i, ts_url in enumerate(ts_urls):
-        logger.info(f"- Downloading {ts_url}... ({i+1}/{len(ts_urls)})")
-        ts_url = f"{m3u8_url.rsplit('/', 1)[0]}/{ts_url}"
-        ts_content = requests.get(ts_url).content
-        with open(f"ts/file_{i}.ts", "wb") as f:
-            f.write(ts_content)
-        # print(f"Downloaded {ts_url}.")
+#     for i, ts_url in enumerate(ts_urls):
+#         logger.info(f"- Downloading {ts_url}... ({i+1}/{len(ts_urls)})")
+#         ts_url = f"{m3u8_url.rsplit('/', 1)[0]}/{ts_url}"
+#         ts_content = requests.get(ts_url).content
+#         with open(f"ts/file_{i}.ts", "wb") as f:
+#             f.write(ts_content)
+#         # print(f"Downloaded {ts_url}.")
     
-    logger.info("- All files downloaded successfully.")
+#     logger.info("- All files downloaded successfully.")
 
     ts = os.listdir("ts/")
     cmd = 'ffmpeg -i "concat:'
     for ts_file in ts:
-        cmd += f"ts/{ts_file}|"
-    cmd += '" -c copy ep/output.mp4'
+        cmd += f"AutoAnime/ts/{ts_file}|"
+    cmd += '" -c copy AutoAnime/ep/output.mp4'
     process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     output, error = process.communicate()
     if error:
