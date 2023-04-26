@@ -55,29 +55,29 @@ async def download_anime(m3u8_url, final):
     subprocess.run(args)
     logger.info("done")
 
-    command = 'ffmpeg -i ep/output.mp4 -c:v libx265 -c:a copy -preset veryfast ep/compressed.mp4'
-    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    output, error = process.communicate()
-    if error:
-        logger.warning(f"- Error: {error.decode('utf-8')}")
-    else:
-        print(output.decode('utf-8'))
-    logger.info("- Compressed output.mp4 into compressed.mp4")
+#     command = 'ffmpeg -i ep/output.mp4 -c:v libx265 -c:a copy -preset veryfast ep/compressed.mp4'
+#     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+#     output, error = process.communicate()
+#     if error:
+#         logger.warning(f"- Error: {error.decode('utf-8')}")
+#     else:
+#         print(output.decode('utf-8'))
+#     logger.info("- Compressed output.mp4 into compressed.mp4")
 
-    for ts_file in ts:
-        os.remove(f"ts/{ts_file}")
-    os.remove("ep/output.mp4")
-    logger.info("- Deleted all downloaded ts files and uncompressed output.mp4.")
+#     for ts_file in ts:
+#         os.remove(f"ts/{ts_file}")
+#     os.remove("ep/output.mp4")
+#     logger.info("- Deleted all downloaded ts files and uncompressed output.mp4.")
 
-    logger.info("- Compressed output.mp4 into compressed.mp4")
+#     logger.info("- Compressed output.mp4 into compressed.mp4")
     
-    command = f'ffmpeg -i ep/compressed.mp4 -i subtitles/subs.vtt -metadata encoded_by="t.me/Anime_Region" -c copy -c:s mov_text -metadata:s:s:0 language=eng -metadata:s:s:0 title="@Anime_Region" ep/final.mp4'
-    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    output, error = process.communicate()
-    if error:
-        logger.info(f"- Error: {error.decode('utf-8')}")
-    else:
-        logger.info(output.decode('utf-8'))
-    os.remove("ep/compressed.mp4")
+#     command = f'ffmpeg -i ep/compressed.mp4 -i subtitles/subs.vtt -metadata encoded_by="t.me/Anime_Region" -c copy -c:s mov_text -metadata:s:s:0 language=eng -metadata:s:s:0 title="@Anime_Region" ep/final.mp4'
+#     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+#     output, error = process.communicate()
+#     if error:
+#         logger.info(f"- Error: {error.decode('utf-8')}")
+#     else:
+#         logger.info(output.decode('utf-8'))
+#     os.remove("ep/compressed.mp4")
     return ("ep/final.mp4")
 
