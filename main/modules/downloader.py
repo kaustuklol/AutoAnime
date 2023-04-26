@@ -27,19 +27,33 @@ async def download_anime(m3u8_url, final):
     
 #     logger.info("- All files downloaded successfully.")
 
-    ts = os.listdir("ts/")
-    cmd = 'ffmpeg -i "concat:'
-    for ts_file in ts:
-        cmd += f"AutoAnime/ts/{ts_file}|"
-    cmd += '" -c copy output.mp4'
-    process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    output, error = process.communicate()
-    if error:
-        print(f"Error: {error.decode('utf-8')}")
-    else:
-        print(output.decode('utf-8'))
-    logger.info("- Concatenated all ts files into output.mp4.")
+#     ts = os.listdir("ts/")
+#     cmd = 'ffmpeg -i "concat:'
+#     for ts_file in ts:
+#         cmd += f"AutoAnime/ts/{ts_file}|"
+#     cmd += '" -c copy output.mp4'
+#     process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+#     output, error = process.communicate()
+#     if error:
+#         print(f"Error: {error.decode('utf-8')}")
+#     else:
+#         print(output.decode('utf-8'))
+#     logger.info("- Concatenated all ts files into output.mp4.")
+    # Set the directory containing the TS files
+    dir_path = "ts"
 
+    # Get a list of all the TS files in the directory
+    ts_files = [f for f in os.listdir(dir_path) if f.endswith(".ts")]
+
+    # Sort the list of files in ascending order
+    ts_files.sort()
+
+    # Create a list of arguments for the ffmpeg command
+    args = ["ffmpeg", "-i", "concat:" + "|".join([os.path.join(dir_path, f) for f in ts_files]), "-c", "copy", "output.ts"]
+
+    # Use subprocess to execute the ffmpeg command
+    subprocess.run(args)
+    logger.info("done")
 
     command = 'ffmpeg -i ep/output.mp4 -c:v libx265 -c:a copy -preset veryfast ep/compressed.mp4'
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
