@@ -97,7 +97,7 @@ async def gen_thumb(anime_name, studio_name, genre_text_list, cover):
     new_draw = ImageDraw.Draw(thumb)
 
     # Calculate position for studio name
-    studio_name = f"\n\nBy {studio_name} Studios"
+    studio_name = f"\n\n @Anime_Region_Ongoing"
     studio_name_size = new_draw.textsize(studio_name, font=new_font)
     studio_name_position = (
         thumb.width - studio_name_size[0] - 50,
