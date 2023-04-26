@@ -3,7 +3,7 @@ from main import bot
 from pyrogram.types import Message
 from config import PUBLIC_CHANNEL_ID
 
-def get_scheduled_animes():
+async def get_scheduled_animes():
     url = 'https://subsplease.org/api/?f=schedule&h=true&tz=IST'
     res = requests.get(url).json()['schedule']
 
