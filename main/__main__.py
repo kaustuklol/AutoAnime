@@ -31,7 +31,7 @@ async def main():
                     logger.info(f"- Fetching Url -> {anime['name_english']}")
                     url = await m3u8_fetcher(anime)
                     logger.info(url)
-                    path = await download_anime(url, anime['name_english'])
+                    path = await download_anime(url, "final.mp4")
     #                 await upload(path, anime)
                     await upload("final.mp4", anime)
                     queue.remove(anime['title'])
