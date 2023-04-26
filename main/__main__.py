@@ -17,7 +17,7 @@ animes = []
 anilist = Anilist()
 logger = logging.getLogger("Bot")
 logger.info("Bot Started uwu!")
-
+os.chdir("AutoAnime")
 
 async def main():
     while True:
@@ -32,7 +32,7 @@ async def main():
                 logger.info(url)
 #                 path = await download_anime(url, anime['name_english'])
 #                 await upload(path, anime)
-                await upload("AutoAnime/final.mp4", anime)
+                await upload("output.ts", anime)
         await bot.send_message(PUBLIC_CHANNEL_ID, "Hey, I'm Back And working fine af!")
         await asyncio.sleep(10) 
                                     
