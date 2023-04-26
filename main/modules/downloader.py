@@ -29,24 +29,24 @@ async def download_anime(m3u8_url, final):
 #     logger.info("- All files downloaded successfully.")
 
 
-    dir_path = "ts"
+#     dir_path = "ts"
 
-    ts_files = [f for f in os.listdir(dir_path) if f.endswith(".ts")]
+#     ts_files = [f for f in os.listdir(dir_path) if f.endswith(".ts")]
 
-    # Sort the list of files in ascending order
-    ts_files.sort()
+#     # Sort the list of files in ascending order
+#     ts_files.sort()
 
-    # Create a list of arguments for the ffmpeg command
-    args = ["ffmpeg", "-i", "concat:" + "|".join([os.path.join(dir_path, f) for f in ts_files]), "-c", "copy", "output.mp4"]
+#     # Create a list of arguments for the ffmpeg command
+#     args = ["ffmpeg", "-i", "concat:" + "|".join([os.path.join(dir_path, f) for f in ts_files]), "-c", "copy", "output.mp4"]
 
-    # Use subprocess to execute the ffmpeg command
-    subprocess.run(args)
-    logger.info("- All files concantinated")
+#     # Use subprocess to execute the ffmpeg command
+#     subprocess.run(args)
+#     logger.info("- All files concantinated")
 
-    args = ["ffmpeg", "-i", "output.mp4", "-c:v", "libx265", "-c:a", "copy", "-preset", "veryfast", "compressed.mp4"]
+#     args = ["ffmpeg", "-i", "output.mp4", "-c:v", "libx265", "-c:a", "copy", "-preset", "veryfast", "compressed.mp4"]
 
-    subprocess.run(args)
-    logger.info("- Compressed output.mp4 into compressed.mp4")
+#     subprocess.run(args)
+#     logger.info("- Compressed output.mp4 into compressed.mp4")
     ts = os.listdir("ts")
     for ts_file in ts:
         os.remove(f"ts/{ts_file}")
