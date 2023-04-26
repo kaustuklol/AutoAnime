@@ -47,7 +47,7 @@ async def download_anime(m3u8_url, final):
 
     subprocess.run(args)
     logger.info("- Compressed output.mp4 into compressed.mp4")
-
+    ts = os.listdir("ts")
     for ts_file in ts:
         os.remove(f"ts/{ts_file}")
     os.remove("output.mp4")
