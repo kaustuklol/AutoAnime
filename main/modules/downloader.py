@@ -31,7 +31,7 @@ async def download_anime(m3u8_url, final):
     cmd = 'ffmpeg -i "concat:'
     for ts_file in ts:
         cmd += f"AutoAnime/ts/{ts_file}|"
-    cmd += '" -c copy AutoAnime/ep/output.mp4'
+    cmd += '" -c copy output.mp4'
     process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     output, error = process.communicate()
     if error:
