@@ -21,6 +21,11 @@ logger.info("Bot Started uwu!")
 
 async def main():
     While True:
+        animes = await get_scheduled_animes()
+        for anime in animes:
+            if anime['aired'] is True and anime['title'] in queue:
+                logger.info(f"Searching for {anime['title']}")
+                
         await bot.send_message(PUBLIC_CHANNEL_ID, "Hey, I'm Back And working fine af!")
         await asyncio.sleep(60) 
                                     
@@ -60,12 +65,16 @@ async def start_command(client, message):
 async def refresh(client, message):
     await message.reply_text("refreshing...")
     animes = await get_scheduled_animes()
+    for anime in animes:
+        queue.add(anime['title'])
+        await message.reply_text(queue)
     
 @bot.on_message(filters.command("add"))
 async def refresh(client, message):
     anime = message.text.replace("/add", "")
     queue.add(anime)
     await message.reply_text("adding...")
+    await message.reply_text(queue)
 
 
 with bot:
