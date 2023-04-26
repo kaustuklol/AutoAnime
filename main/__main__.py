@@ -17,7 +17,7 @@ animes = []
 anilist = Anilist()
 logger = logging.getLogger("Bot")
 logger.info("Bot Started uwu!")
-os.chdir("AutoAnime")
+
 
 async def main():
     while True:
