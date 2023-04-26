@@ -47,16 +47,16 @@ async def download_anime(m3u8_url, final):
 
     subprocess.run(args)
     logger.info("- Compressed output.mp4 into compressed.mp4")
-    ts = os.listdir("ts")
-    for ts_file in ts:
-        os.remove(f"ts/{ts_file}")
-    os.remove("output.mp4")
+#     ts = os.listdir("ts")
+#     for ts_file in ts:
+#         os.remove(f"ts/{ts_file}")
+#     os.remove("output.mp4")
     logger.info("- Deleted all downloaded ts files and uncompressed output.mp4.")
 
     logger.info("- Compressed output.mp4 into compressed.mp4")
     
     args = ["ffmpeg", "-i", "compressed.mp4", "-i", "subtitles/subs.vtt", '-metadata encoded_by="t.me/Anime_Region"', "-c copy", "-c:s mov_text", "-metadata:s:s:0", "language=eng", "-metadata:s:s:0", 'title="@Anime_Region"', "final.mp4"]
     subprocess.run(args)
-    os.remove("compressed.mp4")
-    return os.path.abspath("final.mp4")
+#     os.remove("compressed.mp4")
+#     return os.path.abspath("final.mp4")
 
