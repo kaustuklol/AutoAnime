@@ -13,6 +13,7 @@ async def download_anime(m3u8_url, final):
         os.makedirs("ts")
     if not os.path.exists("ep"):
         os.makedirs("ep")
+    
 #     m3u8_content = requests.get(m3u8_url).text
 
 #     ts_urls = [line.strip() for line in m3u8_content.split('\n') if line.strip().endswith('.ts')]
@@ -29,28 +30,30 @@ async def download_anime(m3u8_url, final):
 
 #
     # Set the directory containing the TS files
-    dir_path = "ts"
+#     dir_path = "ts"
 
-    # Get a list of all the TS files in the directory
-    ts_files = [f for f in os.listdir(dir_path) if f.endswith(".ts")]
+#     # Get a list of all the TS files in the directory
+#     ts_files = [f for f in os.listdir(dir_path) if f.endswith(".ts")]
 
-    # Sort the list of files in ascending order
-    ts_files.sort()
+#     # Sort the list of files in ascending order
+#     ts_files.sort()
 
-    # Create a list of arguments for the ffmpeg command
-    args = ["ffmpeg", "-i", "concat:" + "|".join([os.path.join(dir_path, f) for f in ts_files]), "-c", "copy", "output.mp4"]
+#     # Create a list of arguments for the ffmpeg command
+#     args = ["ffmpeg", "-i", "concat:" + "|".join([os.path.join(dir_path, f) for f in ts_files]), "-c", "copy", "output.mp4"]
 
-    # Use subprocess to execute the ffmpeg command
+#     # Use subprocess to execute the ffmpeg command
+#     subprocess.run(args)
+#     logger.info("done")
+
+    args = ["ffmpeg", "-i", "output.mp4", "-c:v", "libx265", "-c:a", "copy", "-preset", "veryfast", "compressed.mp4")
+#     command = 'ffmpeg -i output.mp4 -c:v libx265 -c:a copy -preset veryfast compressed.mp4'
+#     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+#     output, error = process.communicate()
+#     if error:
+#         logger.warning(f"- Error: {error.decode('utf-8')}")
+#     else:
+#         print(output.decode('utf-8'))
     subprocess.run(args)
-    logger.info("done")
-
-    command = 'ffmpeg -i output.mp4 -c:v libx265 -c:a copy -preset veryfast compressed.mp4'
-    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    output, error = process.communicate()
-    if error:
-        logger.warning(f"- Error: {error.decode('utf-8')}")
-    else:
-        print(output.decode('utf-8'))
     logger.info("- Compressed output.mp4 into compressed.mp4")
 
 #     for ts_file in ts:
