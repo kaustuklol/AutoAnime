@@ -20,7 +20,7 @@ logger.info("Bot Started uwu!")
 
 
 async def main():
-    While True:
+    while True:
         animes = await get_scheduled_animes()
         for anime in animes:
             if anime['aired'] is True and anime['title'] in queue:
