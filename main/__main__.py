@@ -24,16 +24,20 @@ async def main():
         animes = await get_scheduled_animes()
         for anime in animes:
             if anime['aired'] is True and anime['title'] in queue:
-                logger.info(f"- Searching for {anime['title']}")
-                item = purify(anime['title'])
-                anime = anilist.get_anime(r_char(item))
-                logger.info(f"- Fetching Url -> {anime['name_english']}")
-                url = await m3u8_fetcher(anime)
-                logger.info(url)
-#                 path = await download_anime(url, anime['name_english'])
-#                 await upload(path, anime)
-                await upload("output.ts", anime)
-        await bot.send_message(PUBLIC_CHANNEL_ID, "Hey, I'm Back And working fine af!")
+                try:
+                    logger.info(f"- Searching for {anime['title']}")
+                    item = purify(anime['title'])
+                    anime = anilist.get_anime(r_char(item))
+                    logger.info(f"- Fetching Url -> {anime['name_english']}")
+                    url = await m3u8_fetcher(anime)
+                    logger.info(url)
+                    path = await download_anime(url, anime['name_english'])
+    #                 await upload(path, anime)
+                    await upload("final.mp4", anime)
+                    queue.remove(anime['title'])
+                except Exception as e:
+                    logger.info(f"- Error -> {e}")
+
         await asyncio.sleep(10) 
                                     
 @bot.on_message(filters.command("start"))
