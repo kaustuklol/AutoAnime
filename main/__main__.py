@@ -86,7 +86,20 @@ async def refresh(client, message):
     queue.add(anime)
     await message.reply_text("adding...")
     await message.reply_text(queue)
-
-
+    
+@bot.on_message(filters.command("upload"))
+async def epload(client, message):
+    txt = purify(message.text.replace("/upload", ""))
+    anime = anilist.get_anime(r_char(txt))
+    try:
+        logger.info(f"- Searching for {anime['name_english']}")
+        logger.info(f"- Fetching Url -> {anime['name_english']}")
+        url = await m3u8_fetcher(anime['name_english'])
+        logger.info(url)
+        path = await download_anime(url, anime['name_english'])
+#                 await upload(path, anime)
+        await upload("final.mp4", anime)
+    except Exception as e:
+        logger.info(f"- Error -> {e}")
 with bot:
     bot.loop.run_until_complete(main())
