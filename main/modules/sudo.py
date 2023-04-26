@@ -13,3 +13,9 @@ async def refresh(client, message):
     msg = await send_anime_schedule()  
     pin = await bot.pin_chat_message(PUBLIC_CHANNEL_ID, message_id=msg.id)
     await bot.delete_messages(PUBLIC_CHANNEL_ID, pin.id)
+    
+@bot.on_message(filters.command("logs"))
+async def logs(client, message):
+    await message.reply_text("logs...")
+    with open("log.txt", "rb") as f:
+        await bot.send_document(chat_id=message.chat.id, document=f, filename="log.txt")
