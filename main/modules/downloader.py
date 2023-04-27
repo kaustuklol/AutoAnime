@@ -32,12 +32,12 @@ async def download_anime(m3u8_url, final_path):
     # Sort the list of files in ascending order
     ts_files.sort()
     # Create a list of arguments for the ffmpeg command
-    args = ["ffmpeg", "-i", "concat:" + "|".join([os.path.join(dir_path, f) for f in ts_files]), "-c", "copy", "output.mp4"]
+    args = ["ffmpeg", "-i", "concat:" + "|".join([os.path.join(dir_path, f) for f in ts_files]), "-c", "copy", "output.mp4", "-y"]
     # Use subprocess to execute the ffmpeg command
     subprocess.run(args)
     logger.info("- All files concatenated.")
     
-    args = ["ffmpeg", "-i", "output.mp4", "-c:v", "libx265", "-c:a", "copy", "-preset", "veryfast", "compressed.mp4"]
+    args = ["ffmpeg", "-i", "output.mp4", "-c:v", "libx265", "-c:a", "copy", "-preset", "veryfast", "compressed.mp4", "-y"]
     subprocess.run(args)
     logger.info("- Compressed output.mp4 into compressed.mp4")
     
@@ -46,7 +46,7 @@ async def download_anime(m3u8_url, final_path):
     os.remove("output.mp4")
     logger.info("- Deleted all downloaded ts files and uncompressed output.mp4.")
     
-    args = ["ffmpeg", "-i", "compressed.mp4", "-i", "subtitles/subs.vtt", "-metadata", 'encoded_by="t.me/Anime_Region"', "-c", "copy", "-c:s", "mov_text", "-metadata:s:s:0", "language=eng", "-metadata:s:s:0", 'title=@Anime_Region', "-map", "0:v", "-map", "0:a", "-map", "1:s", final_path]
+    args = ["ffmpeg", "-i", "compressed.mp4", "-i", "subtitles/subs.vtt", "-metadata", 'Encoded_by="t.me/Anime_Region"', "-c", "copy", "-c:s", "mov_text", "-metadata:s:s:0", "language=eng", "-metadata:s:s:0", 'title=@Anime_Region', "-map", "0:v", "-map", "0:a", "-map", "1:s", final_path, "-y"]
     subprocess.run(args)
     os.remove("compressed.mp4")
     logger.info(f"- Created final file at {final_path}")
