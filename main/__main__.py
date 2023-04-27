@@ -23,7 +23,7 @@ async def main():
     while True:
         animes = await get_scheduled_animes()
         for anime in animes:
-            if anime['aired'] is True or anime['title'] in queue:
+            if anime['aired'] is True and anime['title'] in queue:
                 try:
                     logger.info(f"- Searching for {anime['title']}")
                     item = purify(anime['title'])
@@ -38,7 +38,7 @@ async def main():
                 except Exception as e:
                     logger.info(f"- Error -> {e}")
 
-        await asyncio.sleep(10) 
+        await asyncio.sleep(60) 
                                     
 @bot.on_message(filters.command("start"))
 async def start_command(client, message):
@@ -87,19 +87,6 @@ async def refresh(client, message):
     await message.reply_text("adding...")
     await message.reply_text(queue)
     
-@bot.on_message(filters.command("upload"))
-async def epload(client, message):
-    txt = purify(message.text.replace("/upload", ""))
-    anime = anilist.get_anime(r_char(txt))
-    try:
-        logger.info(f"- Searching for {anime['name_english']}")
-        logger.info(f"- Fetching Url -> {anime['name_english']}")
-        url = await m3u8_fetcher(anime['name_english'])
-        logger.info(url)
-        path = await download_anime(url, anime['name_english'])
-#                 await upload(path, anime)
-        await upload("final.mp4", anime)
-    except Exception as e:
-        logger.info(f"- Error -> {e}")
+
 with bot:
     bot.loop.run_until_complete(main())
