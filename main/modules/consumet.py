@@ -31,7 +31,7 @@ async def m3u8_fetcher(anime):
         if anime['next_airing_ep']['episode'] == 1:
             results = r.json()['episodes'][int(anime['next_airing_ep']['episode'])]
         else:
-            results = r.json()['episodes'][int(anime['next_airing_ep']['episode'])-3]
+            results = r.json()['episodes'][int(anime['next_airing_ep']['episode'])-2]
     except:
         print("Episode Not Aired Or Can't found")
         return "None"
