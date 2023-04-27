@@ -23,7 +23,7 @@ async def main():
     while True:
         animes = await get_scheduled_animes()
         for anime in animes:
-            if anime['aired'] is True and anime['title'] in queue:
+            if anime['aired'] is True or anime['title'] in queue:
                 try:
                     logger.info(f"- Searching for {anime['title']}")
                     item = purify(anime['title'])
