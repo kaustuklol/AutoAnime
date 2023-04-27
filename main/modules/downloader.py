@@ -46,7 +46,7 @@ async def download_anime(m3u8_url, final_path):
 #     os.remove("output.mp4")
 #     logger.info("- Deleted all downloaded ts files and uncompressed output.mp4.")
     
-    args = ["ffmpeg", "-i", "compressed.mp4", "-i", "subtitles/subs.vtt", '-metadata', 'encoded_by="t.me/Anime_Region"', "-c", "copy", "-c:s", "mov_text", "-metadata:s:s:0", "language=eng", "-metadata:s:s:0", 'title="@Anime_Region"', final_path]
+    args = ["ffmpeg", "-i", "compressed.mp4", "-i", "subtitles/subs.vtt", "-metadata", 'encoded_by="t.me/Anime_Region"', "-c", "copy", "-c:s", "mov_text", "-metadata:s:s:0", "language=eng", "-metadata:s:s:0", 'title=@Anime_Region', "-map", "0:v", "-map", "0:a", "-map", "1:s", final_path]
     subprocess.run(args)
     os.remove("compressed.mp4")
     logger.info(f"- Created final file at {final_path}")
