@@ -80,11 +80,11 @@ async def refresh(client, message):
         queue.add(anime['title'])
     await message.reply_text(queue)
     
-@bot.on_message(filters.command("add"))
+@bot.on_message(filters.command("remove"))
 async def refresh(client, message):
-    anime = message.text.replace("/add", "")
-    queue.add(anime)
-    await message.reply_text("adding...")
+    anime = message.text.replace("/remove", "")
+    queue.remove(anime)
+    await message.reply_text("removing...")
     await message.reply_text(queue)
     
 
