@@ -88,7 +88,7 @@ async def refresh(client, message):
     await message.reply_text(queue)
     
 @bot.on_message(filters.command("force"))
-async def refresh(client, message):
+async def force(client, message):
     anime = message.text.replace("/force", "")
     await message.reply_text("Ok")
     try:
@@ -104,6 +104,10 @@ async def refresh(client, message):
         await upload(f"{r_char(file)}.mp4", anime)
     except Exception as e:
         logger.info(f"- Error -> {e}")
+
+@bot.on_message(filters.command("test"))
+async def test(client, message):
+    await bot.send_video(message.chat.id, "compressed.mp4")
 
     
 
