@@ -99,7 +99,7 @@ async def force(client, message):
         logger.info(f"- Fetching Url -> {anime['name_english']}")
         url = await m3u8_fetcher(anime)
         logger.info(url)
-        file = purify(anime['name_english'])
+        file = "final"
         path = await download_anime(url, f"{r_char(file)}.mp4")
 #                 await upload(path, anime)
         await upload(f"{r_char(file)}.mp4", anime)
