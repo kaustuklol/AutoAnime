@@ -98,9 +98,9 @@ async def refresh(client, message):
         logger.info(f"- Fetching Url -> {anime['name_english']}")
         url = await m3u8_fetcher(anime)
         logger.info(url)
-        path = await download_anime(url, anime['name_english'])
+        path = await download_anime(url, f"{anime['name_english']}.mp4")
 #                 await upload(path, anime)
-        await upload(anime['name_english'], anime)
+        await upload(f"{anime['name_english']}.mp4", anime)
     except Exception as e:
         logger.info(f"- Error -> {e}")
 
