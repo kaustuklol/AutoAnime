@@ -14,18 +14,18 @@ async def download_anime(m3u8_url, final_path):
     if not os.path.exists("ep"):
         os.makedirs("ep")
     
-    m3u8_content = requests.get(m3u8_url).text
+#     m3u8_content = requests.get(m3u8_url).text
 
-    ts_urls = [line.strip() for line in m3u8_content.split('\n') if line.strip().endswith('.ts')]
+#     ts_urls = [line.strip() for line in m3u8_content.split('\n') if line.strip().endswith('.ts')]
 
-    for i, ts_url in enumerate(ts_urls):
-        logger.info(f"- Downloading {ts_url}... ({i+1}/{len(ts_urls)})")
-        ts_url = f"{m3u8_url.rsplit('/', 1)[0]}/{ts_url}"
-        ts_content = requests.get(ts_url).content
-        with open(f"ts/file_{i}.ts", "wb") as f:
-            f.write(ts_content)
+#     for i, ts_url in enumerate(ts_urls):
+#         logger.info(f"- Downloading {ts_url}... ({i+1}/{len(ts_urls)})")
+#         ts_url = f"{m3u8_url.rsplit('/', 1)[0]}/{ts_url}"
+#         ts_content = requests.get(ts_url).content
+#         with open(f"ts/file_{i}.ts", "wb") as f:
+#             f.write(ts_content)
     
-    logger.info("- All files downloaded successfully.")
+#     logger.info("- All files downloaded successfully.")
 
     dir_path = "ts"
     ts_files = [f for f in os.listdir(dir_path) if f.endswith(".ts")]
