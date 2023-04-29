@@ -38,7 +38,7 @@ async def download_anime(m3u8_url, final_path):
     logger.info("- All files concatenated.")
     
     logger.info(f"- Compressing {final_path}")
-    args = ["ffmpeg", "-i", "output.mp4", "-map", "0", "-c:v", "libx265", "-c:a", "copy", "-crf", "28", "-preset", "veryfast", "compressed.mp4", "-y"]
+    args = ["ffmpeg", "-i", "output.mp4", "-map", "0", "-c:v", "libx265", "-c:a", "copy", "-crf", "28", "-preset", "veryslow", "compressed.mp4", "-y"]
     subprocess.run(args)
     
     args = ["ffmpeg", "-i", "compressed.mp4", "-i", "subtitles/subs.vtt", "-metadata", 'Encoded By="t.me/Anime_Region"', "-c", "copy", "-c:s", "mov_text", "-metadata:s:s:0", "language=eng", "-metadata:s:s:0", 'title=@Anime_Region', "-map", "0:v", "-map", "0:a", "-map", "1:s", "final.mp4", "-y"]
