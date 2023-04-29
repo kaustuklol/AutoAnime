@@ -87,6 +87,24 @@ async def refresh(client, message):
     await message.reply_text("removing...")
     await message.reply_text(queue)
     
+@bot.on_message(filters.command("force"))
+async def refresh(client, message):
+    anime = message.text.replace("/force", "")
+    await message.reply_text("Ok")
+    try:
+        logger.info(f"- Searching for (Force){anime}")
+        item = purify(anime)
+        anime = anilist.get_anime(r_char(item))
+        logger.info(f"- Fetching Url -> {anime['name_english']}")
+        url = await m3u8_fetcher(anime)
+        logger.info(url)
+        path = await download_anime(url, anime['name_english'])
+#                 await upload(path, anime)
+        await upload(anime['name_english'], anime)
+    except Exception as e:
+        logger.info(f"- Error -> {e}")
+
+    
 
 with bot:
     bot.loop.run_until_complete(main())
