@@ -108,7 +108,7 @@ async def force(client, message):
 
 @bot.on_message(filters.command("test"))
 async def test(client, message):
-    await bot.send_video(message.chat.id, "m.mp4")
+    await bot.send_video(message.chat.id, "compressed.mp4")
 
     
 
