@@ -40,14 +40,16 @@ async def download_anime(m3u8_url, final_path):
     subprocess.run(args)
     logger.info("- All files concatenated.")
     
-    args = ["ffmpeg", "-i", "output.mp4", "-i", "subtitles/subs.vtt", "-metadata", 'Encoded By="t.me/Anime_Region"', "-c", "copy", "-c:s", "mov_text", "-metadata:s:s:0", "language=eng", "-metadata:s:s:0", 'title=@Anime_Region', "-map", "0:v", "-map", "0:a", "-map", "1:s", "subs.mp4", "-y"]
-    subprocess.run(args)
-    logger.info(f"- Created final file at {final_path}")
-    
     logger.info(f"- Compressing {final_path}")
-    final = final_path.replace(" ", "-")
-    args = ["ffmpeg", "-i", "subs.mp4", "-c:v", "libx265", "-c:a", "copy", "-preset", "veryfast", final, "-y"]
+    args = ["ffmpeg", "-i", "output.mp4", "-c:v", "libx265", "-c:a", "copy", "-preset", "veryfast", "compressed.mp4", "-y"]
     subprocess.run(args)
+    
+    logger.info(f"- Created final file at {final_path}")
+    final = final_path.replace(" ", "-")
+    args = ["ffmpeg", "-i", "compressed.mp4", "-i", "subtitles/subs.vtt", "-metadata", 'Encoded By="t.me/Anime_Region"', "-c", "copy", "-c:s", "mov_text", "-metadata:s:s:0", "language=eng", "-metadata:s:s:0", 'title=@Anime_Region', "-map", "0:v", "-map", "0:a", "-map", "1:s", final, "-y"]
+    subprocess.run(args)
+
+    
     
     
     
