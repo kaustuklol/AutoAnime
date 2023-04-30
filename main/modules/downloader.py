@@ -31,6 +31,7 @@ async def download_anime(m3u8_url, final_path):
     ts_files = [f for f in os.listdir(dir_path) if f.endswith(".ts")]
     # Sort the list of files in ascending order
     ts_files.sort()
+    logger.info(ts_files)
     # Create a list of arguments for the ffmpeg command
     args = ["ffmpeg", "-i", "concat:" + "|".join([os.path.join(dir_path, f) for f in ts_files]), "-c", "copy", "output.mp4", "-y"]
     # Use subprocess to execute the ffmpeg command
