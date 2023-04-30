@@ -6,3 +6,13 @@ def r_char(text):
 
 def purify(text):
     return text.replace("S2", "Season 2").replace("S3", "Season 3").replace("S4", "Season 4").replace("S5", "Season 5").replace("S6", "Season 6").replace("S7", "Season 7").replace("S8", "Season 8").replace("S9", "Season 9").replace("S10", "Season 10").lower()
+
+from AnilistPython import Anilist
+anilist = Anilist()
+
+def eng_name(name):
+    try:
+        return anilist.get_anime_info(name)['name_english']
+    except:
+        return name
+    
