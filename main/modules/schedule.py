@@ -2,7 +2,7 @@ import requests
 from main import bot
 from pyrogram.types import Message
 from config import PUBLIC_CHANNEL_ID
-
+from main.modules.utils import eng_name
 async def get_scheduled_animes():
     url = 'https://subsplease.org/api/?f=schedule&h=true&tz=IST'
     res = requests.get(url).json()['schedule']
@@ -10,7 +10,7 @@ async def get_scheduled_animes():
     animes = []
     for i in res:
         x = {}
-        x['title'] = i['title']
+        x['title'] = eng_name(i['title'])
         x['link'] = "https://subsplease.org/shows/" + i['page']
         x['time'] = i['time']
         x['aired'] = i['aired']
