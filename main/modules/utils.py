@@ -15,6 +15,7 @@ anilist = Anilist()
 
 def eng_name(name):
     try:
+        logger.info(anilist.get_anime_info(name)['name_english'])
         return anilist.get_anime_info(name)['name_english']
     except Exception as e:
         logger.info(e)
