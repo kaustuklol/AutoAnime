@@ -1,3 +1,6 @@
+import logging
+logger = logging.getLogger("Utils")  
+
 def trim(text):
     return text.replace(" ", "").lower()
 
@@ -13,6 +16,7 @@ anilist = Anilist()
 def eng_name(name):
     try:
         return anilist.get_anime_info(name)['name_english']
-    except:
+    except Exception as e:
+        logger.info(e)
         return name
     
