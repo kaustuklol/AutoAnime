@@ -19,7 +19,7 @@ async def upload(f, anime):
     id = msg.id
     cover = await gen_cover(file)   
     thumb = await gen_thumb(anime['name_english'], "@Anime_Region", anime['genres'], cover)
-    title = f"{anime['name_english']} Episode: {int(anime['next_airing_ep']['episode'])-1} - @Anime_Region_Ongoing"   
+    title = f"{anime['name_english']} - {int(anime['next_airing_ep']['episode'])-1}\n@Anime_Region_Ongoing"   
 
 
     logger.info(f"{file} uploaded to private channel")
