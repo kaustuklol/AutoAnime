@@ -32,7 +32,7 @@ async def download_anime(m3u8_url, final_path):
     ts_files = [f for f in os.listdir(dir_path) if f.endswith(".ts")]
     # Sort the list of files in ascending order
 #     ts_files.sort()
-    logger.info(list)
+#     logger.info(list)
     # Create a list of arguments for the ffmpeg command
     args = ["ffmpeg", "-i", "concat:" + "|".join([os.path.join(dir_path, f) for f in list]), "-c", "copy", "output.mp4", "-y"]
     # Use subprocess to execute the ffmpeg command
@@ -40,7 +40,7 @@ async def download_anime(m3u8_url, final_path):
     subprocess.run(args)
     logger.info("- All files concatenated.")
     
-    args = ["ffmpeg", "-i", "output.mp4", "-vf", "subtitles=subtitles/subs.vtt", "subs.mp4", "-y"]
+    args = ["ffmpeg", "-i", "output.mp4", "-i", "subtitles/subs.vtt", "-metadata", 'Encoded By="t.me/Anime_Region"', "-c", "copy", "-c:s", "mov_text", "-metadata:s:s:0", "language=eng", "-metadata:s:s:0", 'title=@Anime_Region', "-map", "0:v", "-map", "0:a", "-map", "1:s", "subs.mp4", "-y"]
     subprocess.run(args)
     logger.info(f"- Created final file at {final_path}")
     
