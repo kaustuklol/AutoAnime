@@ -45,7 +45,8 @@ async def download_anime(m3u8_url, final_path):
     logger.info(f"- Created final file at {final_path}")
     
     logger.info(f"- Compressing {final_path}")
-    args = ["ffmpeg", "-i", "subs.mp4", "-c:v", "libx265", "-c:a", "copy", "-preset", "veryfast", "final.mp4", "-y"]
+    final = final_path.replace(" ", "-")
+    args = ["ffmpeg", "-i", "subs.mp4", "-c:v", "libx265", "-c:a", "copy", "-preset", "veryfast", final, "-y"]
     subprocess.run(args)
     
     
