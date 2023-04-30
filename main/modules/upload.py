@@ -6,9 +6,10 @@ import os
 import logging
 logger = logging.getLogger("Uploader")  
 
-async def upload(file, anime):
+async def upload(f, anime):
+    file = f.replace(" ", "-")
     uploaded = 0
-    await bot.send_message(PRIVATE_CHANNEL_ID, f"{file} uploading to private channel, Uploaded: {uploaded}")
+    await bot.send_message(PRIVATE_CHANNEL_ID, f"{anime['name_english']} uploading to private channel")
     async def progress(current, total):
         uploaded = f"{current * 100 / total:.1f}%"
         logger.info(f"Uploaded: {uploaded}")
