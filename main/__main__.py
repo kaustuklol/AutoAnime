@@ -108,7 +108,7 @@ async def force(client, message):
 
 @bot.on_message(filters.command("test"))
 async def test(client, message):
-    file =  message.text.replace("/test", "")
+    file =  message.text.replace("/test ", "")
     await bot.send_video(message.chat.id, file)
 
     
