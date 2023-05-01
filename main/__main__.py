@@ -114,7 +114,7 @@ async def test(client, message):
 @bot.on_message(filters.command("anime") & filters.user(SUDO_USERS))
 async def test(client, message):
     name =  message.text.replace("/test ", "")
-    await bot.send_video(message.chat.id, anilist.get_anime(name))
+    await message.reply_text(anilist.get_anime(name))
     
 
 with bot:
