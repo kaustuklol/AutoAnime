@@ -18,4 +18,4 @@ async def refresh(client, message):
 async def logs(client, message):
     await message.reply_text("logs...")
     with open("log.txt", "rb") as f:
-        await bot.send_document(chat_id=message.chat.id, document=f, filename="log.txt")
+        await bot.send_document(chat_id=message.chat.id, document=f)
