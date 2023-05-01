@@ -10,7 +10,7 @@ async def get_scheduled_animes():
     animes = []
     for i in res:
         x = {}
-        x['title'] = eng_name(i['title'])
+        x['title'] = i['title']
         x['link'] = "https://subsplease.org/shows/" + i['page']
         x['time'] = i['time']
         x['aired'] = i['aired']
@@ -27,7 +27,7 @@ async def send_anime_schedule():
         for i in animes:
                 text += '<b>[</b><code>{}</code><b>] - 📌 {}</b>\n\n'.format(
                     i["time"],
-                    i["title"]
+                    eng_name(i["title"])
                 )
     text += "\n<b>⏰ Current TimeZone :</b> <code>IST (UTC +5:30)</code>"
     try:
