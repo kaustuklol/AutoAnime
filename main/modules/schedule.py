@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from config import PUBLIC_CHANNEL_ID
 from main.modules.utils import eng_name
 async def get_scheduled_animes():
-    url = 'https://subsplease.org/api/?f=schedule&h=true&tz=IST'
+    url = 'https://subsplease.org/api/?f=schedule&h=true&tz=Asia/Kolkata'
     res = requests.get(url).json()['schedule']
 
     animes = []
