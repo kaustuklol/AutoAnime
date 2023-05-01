@@ -6,10 +6,15 @@ import os
 async def m3u8_fetcher(anime):
     base = "https://api.consumet.org/anime/zoro/"
     id = ""
-
-    url = f"{base}{r_char(anime['name_romaji'])}"
-    r = requests.get(url)
-    results = r.json()['results']
+    
+    try:
+        url = f"{base}{r_char(anime['name_romaji'])}"
+        r = requests.get(url)
+        results = r.json()['results']
+    except:
+        url = f"{base}{r_char(anime['name_english'])}"
+        r = requests.get(url)
+        results = r.json()['results']
     for result in results:
         if trim(r_char(result['title'])) == trim(r_char(anime['name_english'])):
             id = result['id']
