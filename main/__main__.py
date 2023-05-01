@@ -1,7 +1,7 @@
 from main import bot
 from main.modules.schedule import send_anime_schedule, get_scheduled_animes
 from datetime import datetime
-from config import queue, PRIVATE_CHANNEL_ID, PUBLIC_CHANNEL_ID
+from config import queue, PRIVATE_CHANNEL_ID, PUBLIC_CHANNEL_ID, SUDO_USERS
 import asyncio
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton 
 from pyrogram import Client, filters
@@ -73,7 +73,7 @@ async def start_command(client, message):
             await bot.send_photo(message.chat.id, photo="main/start.jpg", caption=message_text, reply_markup=btns)
        
 
-@bot.on_message(filters.command("refresh"))
+@bot.on_message(filters.command("refresh") & filters.user(SUDO_USERS))
 async def refresh(client, message):
     await message.reply_text("refreshing...")
     animes = await get_scheduled_animes()
@@ -81,14 +81,14 @@ async def refresh(client, message):
         queue.add(anime['title'])
     await message.reply_text(queue)
     
-@bot.on_message(filters.command("remove"))
+@bot.on_message(filters.command("remove") & filters.user(SUDO_USERS))
 async def refresh(client, message):
     anime = message.text.replace("/remove", "")
     queue.remove(anime)
     await message.reply_text("removing...")
     await message.reply_text(queue)
     
-@bot.on_message(filters.command("force"))
+@bot.on_message(filters.command("force") & filters.user(SUDO_USERS))
 async def force(client, message):
     anime = message.text.replace("/force", "")
     await message.reply_text("Ok")
@@ -106,11 +106,15 @@ async def force(client, message):
     except Exception as e:
         logger.info(f"- Error -> {e}")
 
-@bot.on_message(filters.command("test"))
+@bot.on_message(filters.command("test") & filters.user(SUDO_USERS))
 async def test(client, message):
     file =  message.text.replace("/test ", "")
     await bot.send_video(message.chat.id, file)
-
+    
+@bot.on_message(filters.command("anime") & filters.user(SUDO_USERS))
+async def test(client, message):
+    name =  message.text.replace("/test ", "")
+    await bot.send_video(message.chat.id, anilist.get_anime(name))
     
 
 with bot:
