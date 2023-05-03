@@ -108,8 +108,8 @@ async def force(client, message):
 
 @bot.on_message(filters.command("test") & filters.user(SUDO_USERS))
 async def test(client, message):
-    file =  message.text.replace("/test ", "")
-    await bot.send_video(message.chat.id, file)
+    anime = anilist.get_anime("Kubo Wont Let Me Be Invisible")
+    await upload(f"compressed.mp4", anime)
     
 @bot.on_message(filters.command("anime") & filters.user(SUDO_USERS))
 async def test(client, message):
