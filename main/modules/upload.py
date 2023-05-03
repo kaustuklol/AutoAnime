@@ -20,7 +20,7 @@ async def upload(f, anime):
     id = msg.id
     cover = await gen_cover(file)   
     try:
-        studio = get_anime_studio(anime['name_english'])
+        studio = f"By {get_anime_studio(anime['name_english'])} Studios"
     except Exception as e:
         logger.info(f"Studio err -> {e}")
         studio = "@Anime_Region_Ongoing"
