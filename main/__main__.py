@@ -9,7 +9,7 @@ import main.modules.sudo
 import os
 from AnilistPython import Anilist
 import logging
-from main.modules.utils import purify, r_char
+from main.modules.utils import purify, r_char, status
 from main.modules.downloader import download_anime
 from main.modules.consumet import m3u8_fetcher
 from main.modules.upload import upload
@@ -30,6 +30,7 @@ async def main():
                     anime = anilist.get_anime(r_char(item))
                     logger.info(f"- Fetching Url -> {anime['name_english']}")
                     url = await m3u8_fetcher(anime)
+                    await status(f"Fetching Url -> {anime['name_english']}")
                     logger.info(url)
                     file = purify(anime['name_english'])
                     path = await download_anime(url, f"{r_char(file)}.mp4")
