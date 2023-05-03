@@ -2,12 +2,13 @@ from main import bot
 from config import PRIVATE_CHANNEL_ID, PUBLIC_CHANNEL_ID
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from main.modules.thumbnail import gen_thumb, gen_cover
-from main.modules.utils import get_anime_studio
+from main.modules.utils import get_anime_studio, status
 import os
 import logging
 logger = logging.getLogger("Uploader")  
 
 async def upload(f, anime):
+    await status(f"Uploading {anime['name_english']}", "15 sec")
     file = f.replace(" ", "-")
     uploaded = 0
     await bot.send_message(PRIVATE_CHANNEL_ID, f"{anime['name_english']} uploading to private channel")
@@ -38,3 +39,4 @@ async def upload(f, anime):
 
     await bot.send_photo(PUBLIC_CHANNEL_ID, photo=thumb, caption=title, reply_markup=keyboard)
 #     os.remove(file)
+    await status(f"Doing Nothing!")
