@@ -101,7 +101,7 @@ async def force(client, message):
         url = await m3u8_fetcher(anime)
         logger.info(url)
         file = purify(anime['name_english'])
-        path = await download_anime(url, f"{r_char(file)}.mp4")
+        path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
 #                 await upload(path, anime)
         await upload(f"{r_char(file)}.mp4", anime)
     except Exception as e:
