@@ -78,10 +78,10 @@ async def gen_thumb(anime_name, studio_name, genre_text_list, cover):
 
     # Add text on the thumbnail
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype("assets/font1.ttf", 43)
+    font = ImageFont.truetype("assets/font1.ttf", 50)
     text = studio_name
     text_width, text_height = draw.textsize(text, font)
-    x = thumb.width - text_width - 50
+    x = thumb.width - text_width - 150
     y = (background.height - text_height) // 1.7
     draw.text((x, y), text, font=font, fill=(255, 255, 255))
     
@@ -89,11 +89,13 @@ async def gen_thumb(anime_name, studio_name, genre_text_list, cover):
     for i in range(len(genre_text_list)):
         if i==3:
             break
-        genre_text += f"•{genre_text_list[i]}  "
+        genre_text += f"{genre_text_list[i]}  "
 
+    draw = ImageDraw.Draw(background)
+    font = ImageFont.truetype("assets/font1.ttf", 43)
     text = genre_text
     text_width, text_height = draw.textsize(text, font)
-    x = 1170
+    x = 1175
     y = (background.height - text_height) // 1.1
     draw.text((x, y), text, font=font, fill=(255, 255, 255))
     
