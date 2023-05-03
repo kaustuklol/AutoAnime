@@ -1,3 +1,5 @@
+from main import bot
+from config import PUBLIC_CHANNEL_ID
 import logging
 logger = logging.getLogger("Utils")  
 
@@ -49,3 +51,11 @@ def get_anime_studio(anime_name):
     studio_name = data["data"]["Media"]["studios"]["edges"][0]["node"]["name"]
 
     return studio_name
+
+async def status(sts):
+    await bot.edit_message_text(
+    chat_id=PUBLIC_CHANNEL_ID,
+    message_id=1206,
+    text=sts
+)
+    
