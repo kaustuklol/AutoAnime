@@ -54,19 +54,19 @@ def get_anime_studio(anime_name):
 
 async def status(sts, time="0"):
     if sts == "Doing Nothing!":
-        text = "Bot Status : Up! And Running.\n\nCurrently : Ideal"
+        txt = "Bot Status : Up! And Running.\n\nCurrently : Ideal"
         await bot.edit_message_text(
         chat_id=PUBLIC_CHANNEL_ID,
         message_id=1206,
-        text=sts
+        text=txt
     )
     else:
-        text = f"Bot Status : Up! And Running.\n\nCurrently : {sts}\n\nEstimated Time : {time}"
+        txt = f"Bot Status : Up! And Running.\n\nCurrently : {sts}\n\nEstimated Time : {time}"
 
         await bot.edit_message_text(
         chat_id=PUBLIC_CHANNEL_ID,
         message_id=1206,
-        text=sts
+        text=txt
         )
         
     
