@@ -83,7 +83,7 @@ async def refresh(client, message):
     
 @bot.on_message(filters.command("remove") & filters.user(SUDO_USERS))
 async def refresh(client, message):
-    anime = message.text.replace("/remove", "")
+    anime = message.text.replace("/remove ", "")
     queue.remove(anime)
     await message.reply_text("removing...")
     await message.reply_text(queue)
@@ -113,7 +113,7 @@ async def test(client, message):
     
 @bot.on_message(filters.command("anime") & filters.user(SUDO_USERS))
 async def test(client, message):
-    name =  message.text.replace("/test ", "")
+    name =  message.text.replace("/anime ", "")
     await message.reply_text(anilist.get_anime(name))
     
 
