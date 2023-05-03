@@ -34,7 +34,7 @@ async def emptyqueue(client, message):
     try:
         for i in queue:
             queue.remove(i)
-             await message.reply_text("Emptied Queue..")
+            await message.reply_text("Emptied Queue..")
     except Exception as e:
         await message.reply_text(e)
 
