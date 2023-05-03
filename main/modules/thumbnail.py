@@ -35,128 +35,69 @@ async def gen_cover(video_path):
 
     return "assets/covers/cover.png"
 
+def wrap(text):
+    text = text.split(" ")
+    n=0
+    txt = ""
+    for i in text:
+        if n==4:
+            txt += "\n\n"
+        if n==6:
+            txt += "...."
+            return txt
+        txt += f" {i}"
+        n += 1
+
+    return txt
+
 async def gen_thumb(anime_name, studio_name, genre_text_list, cover):
     thumbs = os.listdir("assets/thumbs/")
-    # Open background and thumb images
-    background = Image.open("assets/covers/cover.png")
+    
+    # Load cover and random thumbnail
+    background = Image.open(cover)
     thumb = Image.open(f"assets/thumbs/{random.choice(thumbs)}")
-
-    # Resize thumb image to new height
+    
+    # Resize thumbnail
     new_height = 1080
     aspect_ratio = thumb.width / thumb.height
     new_width = int(new_height * aspect_ratio)
     thumb = thumb.resize((new_width, new_height))
+    
+    # Add thumbnail to cover
+    x = 0   # margin of 50 pixels
+    background.paste(thumb, (x, 0), thumb)
+    
+    # Add text on the thumbnail
+    draw = ImageDraw.Draw(background)
+    font = ImageFont.truetype("assets/font1.ttf", 83)
+    text = wrap(anime_name)
+    text_width, text_height = draw.textsize(text, font)
+    x = thumb.width - text_width - 50
+    y = (background.height - text_height) // 4
+    draw.text((x, y), text, font=font, fill=(255, 255, 255))
 
-    # Create a drawing context for the thumb image
-    draw = ImageDraw.Draw(thumb)
-
-    # Load desired font file
-    font_path = "assets/font1.ttf"
-    font_size = 83
-    font = ImageFont.truetype(font_path, font_size)
-
-    # Add text to thumb image with desired font
-    # anime_name = "The Misfit Of Demon King Academy"
-    # print(len(anime_name.replace(" ", "")))
-
-    # Spacing b/w anime_name and genres
-    if len(anime_name) <= 30:
-        genre_spacing = 90
-    else:
-        genre_spacing = -60
-
-    def thumb_text(anime_name):
-        import textwrap
-
-        wrapped_string = "\n\n".join(
-            textwrap.wrap(anime_name, width=20)
-        )
-
-        # Print the result
-        return wrapped_string.upper()
-
-    anime_name = thumb_text(anime_name)
-    anime_name_size = draw.textsize(anime_name, font=font)
-    anime_name_position = (
-        thumb.width - anime_name_size[0] - 50,
-        300,
-    )  # 50-top margin 300-right
-    draw.text(
-        anime_name_position,
-        anime_name,
-        font=font,
-        fill=(255, 255, 255),
-    )
-
-    # font file for the studio name text
-    new_font_path = "assets/font2.otf"
-    new_font_size = 50
-    new_font = ImageFont.truetype(new_font_path, new_font_size)
-
-    # Create a drawing context for the thumb image
-    new_draw = ImageDraw.Draw(thumb)
-
-    # Calculate position for studio name
-    studio_name = f"\n\n @Anime_Region_Ongoing"
-    studio_name_size = new_draw.textsize(studio_name, font=new_font)
-    studio_name_position = (
-        thumb.width - studio_name_size[0] - 50,
-        anime_name_position[1] + anime_name_size[1] + -10,
-    )  # replace 20 with desired spacing between the two texts
-
-    # Add new text to thumb image with new font
-    new_draw.text(
-        studio_name_position,
-        studio_name,
-        font=new_font,
-        fill=(255, 255, 255),
-    )  # replace fill color as desired
-
-    # Load desired font file for the genre text
-    genre_font_path = "assets/font2.otf"
-    genre_font_size = 50  # replace with desired font size
-    genre_font = ImageFont.truetype(genre_font_path, genre_font_size)
-
-    # Create a drawing context for the thumb image
-    genre_draw = ImageDraw.Draw(thumb)
-
-    # Calculate position for the genre new text
-    # genre_text_list = ["Action", "Comedy", "Fantasy"]
-    genre_text = "\n\n\n\n"
+    # Add text on the thumbnail
+    draw = ImageDraw.Draw(background)
+    font = ImageFont.truetype("assets/font1.ttf", 43)
+    text = studio_name
+    text_width, text_height = draw.textsize(text, font)
+    x = thumb.width - text_width - 50
+    y = (background.height - text_height) // 1.7
+    draw.text((x, y), text, font=font, fill=(255, 255, 255))
+    
+    genre_text = ""
     for i in range(len(genre_text_list)):
         if i==3:
             break
         genre_text += f"•{genre_text_list[i]}  "
 
-    genre_anime_name_size = genre_draw.textsize(
-        genre_text, font=genre_font
-    )
-    genre_anime_name_position = (
-        thumb.width - genre_anime_name_size[0] - 250,
-        studio_name_position[1] + studio_name_size[1] + genre_spacing,
-    )
-
-    # Add the genre new text to thumb image with the genre new font
-    genre_draw.text(
-        genre_anime_name_position,
-        genre_text,
-        font=genre_font,
-        fill=(255, 255, 255),
-    )  # replace fill color as desired
-
-    # Calculate position for right alignment
-    x = (
-        background.width - thumb.width
-    )  # replace 50 with desired right margin
-
-    # Paste thumb image onto background image at new position
-    background.paste(
-        thumb, (x, 0), thumb
-    )  # replace 50 with desired top margin
-
-    # save resulting image
+    text = genre_text
+    text_width, text_height = draw.textsize(text, font)
+    x = 1170
+    y = (background.height - text_height) // 1.1
+    draw.text((x, y), text, font=font, fill=(255, 255, 255))
+    
     # background.show()
     background.save("assets/thumbnail.png")
 
     return "assets/thumbnail.png"
-
