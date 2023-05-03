@@ -21,7 +21,6 @@ async def download_anime(m3u8_url, final_path, name):
     ts_urls = [line.strip() for line in m3u8_content.split('\n') if line.strip().endswith('.ts')]
     await status(f"Downloading {name}", f"{len(ts_urls)} seconds")
     list = []
-    await status
     for i, ts_url in enumerate(ts_urls):
         logger.info(f"- Downloading {ts_url}... ({i+1}/{len(ts_urls)})")
         ts_url = f"{m3u8_url.rsplit('/', 1)[0]}/{ts_url}"
