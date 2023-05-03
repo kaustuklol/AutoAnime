@@ -52,10 +52,21 @@ def get_anime_studio(anime_name):
 
     return studio_name
 
-async def status(sts):
-    await bot.edit_message_text(
-    chat_id=PUBLIC_CHANNEL_ID,
-    message_id=1206,
-    text=sts
-)
+async def status(sts, time="0"):
+    if sts == "Doing Nothing!":
+        text = "Bot Status : Up! And Running.\n\nCurrently : Ideal"
+        await bot.edit_message_text(
+        chat_id=PUBLIC_CHANNEL_ID,
+        message_id=1206,
+        text=sts
+    )
+    else:
+        text = f"Bot Status : Up! And Running.\n\nCurrently : {sts}\n\nEstimated Time : {time}"
+
+        await bot.edit_message_text(
+        chat_id=PUBLIC_CHANNEL_ID,
+        message_id=1206,
+        text=sts
+        )
+        
     
