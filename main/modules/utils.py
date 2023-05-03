@@ -21,3 +21,31 @@ def eng_name(name):
         logger.info(e)
         return name
     
+import requests
+
+def get_anime_studio(anime_name):
+    # Search for anime by name
+    url = "https://graphql.anilist.co"
+    query = '''
+        query ($search: String) {
+            Media(search: $search, type: ANIME) {
+                studios(isMain: true) {
+                    edges {
+                        node {
+                            name
+                        }
+                    }
+                }
+            }
+        }
+    '''
+    variables = {
+        'search': anime_name
+    }
+    response = requests.post(url, json={'query': query, 'variables': variables})
+    data = response.json()
+
+    # Get studio name
+    studio_name = data["data"]["Media"]["studios"]["edges"][0]["node"]["name"]
+
+    return studio_name
