@@ -78,7 +78,7 @@ async def gen_thumb(anime_name, studio_name, genre_text_list, cover):
 
     # Add text on the thumbnail
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype("assets/font2.ttf", 50)
+    font = ImageFont.truetype("assets/font2.otf", 50)
     text = studio_name
     text_width, text_height = draw.textsize(text, font)
     x = thumb.width - text_width - 150
@@ -92,7 +92,7 @@ async def gen_thumb(anime_name, studio_name, genre_text_list, cover):
         genre_text += f"•{genre_text_list[i]}  "
 
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype("assets/font2.ttf", 43)
+    font = ImageFont.truetype("assets/font2.otf", 43)
     text = genre_text
     text_width, text_height = draw.textsize(text, font)
     x = 1175
