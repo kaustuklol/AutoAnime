@@ -38,5 +38,5 @@ async def upload(f, anime):
             )]])
 
     await bot.send_photo(PUBLIC_CHANNEL_ID, photo=thumb, caption=title, reply_markup=keyboard)
-#     os.remove(file)
+    os.remove(file)
     await status(f"Doing Nothing!")
