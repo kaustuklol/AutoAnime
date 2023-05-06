@@ -3,7 +3,7 @@ import asyncio
 from main.modules.utils import trim, r_char
 import os
 import logging
-logging.getlogger("Consumet - ")
+logging.getLogger("Consumet - ")
 
 async def m3u8_fetcher(anime):
     base = "https://api.consumet.org/anime/zoro/"
