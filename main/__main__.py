@@ -31,7 +31,7 @@ async def main():
                     anime = anilist.get_anime(r_char(item))
                     url = await m3u8_fetcher(anime)
                     if url == "None":
-                        break
+                        pass
 
                     file = purify(anime['name_english'])
                     path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
