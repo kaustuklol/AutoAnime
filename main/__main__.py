@@ -145,9 +145,19 @@ async def d(client, message):
 @bot.on_message(filters.command("rd") & filters.user(SUDO_USERS))
 async def d(client, message):
     try:
-        anime = message.text.replace("/remove ", "")
+        anime = message.text.replace("/rd ", "")
         downloaded.remove(anime)
         await message.reply_text("removing...")
+        await message.reply_text(downloaded)
+    except Exception as e:
+        await message.reply_text(e)
+        
+@bot.on_message(filters.command("ad") & filters.user(SUDO_USERS))
+async def ad(client, message):
+    try:
+        anime = message.text.replace("/ad ", "")
+        downloaded.add(anime)
+        await message.reply_text("addin...")
         await message.reply_text(downloaded)
     except Exception as e:
         await message.reply_text(e)
