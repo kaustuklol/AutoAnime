@@ -125,7 +125,32 @@ async def test(client, message):
 async def test(client, message):
     name =  message.text.replace("/anime ", "")
     await message.reply_text(anilist.get_anime(name))
-    
+   
+@bot.on_message(filters.command("clrdownload") & filters.user(SUDO_USERS))
+async def clrdownload(client, message):
+    try:
+        for i in downloaded:
+            downloaded.remove(i)
+            await message.reply_text("Cleared Downloaded..")
+    except Exception as e:
+        await message.reply_text(e)
+        
+@bot.on_message(filters.command("getdownloads") & filters.user(SUDO_USERS))
+async def d(client, message):
+    try:
+        await message.reply_text(downloaded)
+    except Exception as e:
+        await message.reply_text(e)
+        
+@bot.on_message(filters.command("rd") & filters.user(SUDO_USERS))
+async def d(client, message):
+    try:
+        anime = message.text.replace("/remove ", "")
+        downloaded.remove(anime)
+        await message.reply_text("removing...")
+        await message.reply_text(downloaded)
+    except Exception as e:
+        await message.reply_text(e)
 
 with bot:
     bot.loop.run_until_complete(main())
