@@ -21,24 +21,21 @@ logger.info("Bot Started uwu!")
 
 async def main():
     while True:
-        animes = await get_scheduled_animes()
-        for ani in animes:
-            if ani['aired'] is True and ani['title'] in queue:
-                try:
-                    logger.info(f"- Searching for {ani['title']}")
-                    item = purify(ani['title'])
-                    anime = anilist.get_anime(r_char(item))
-                    logger.info(f"- Fetching Url -> {anime['name_english']}")
-                    url = await m3u8_fetcher(anime)
-                    await status(f"Fetching Url -> {anime['name_english']}", "3 sec")
-                    logger.info(url)
-                    file = purify(anime['name_english'])
-                    path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
-    #                 await upload(path, anime)
-                    await upload(f"{r_char(file)}.mp4", anime)
-                    queue.remove(ani['title'])
-                except Exception as e:
-                    logger.info(f"- Error -> {e}")
+        for ani in queue:
+            try:
+                item = purify(ani)
+                anime = anilist.get_anime(r_char(item))
+                url = await m3u8_fetcher(anime)
+                if url == "None":
+                    break
+
+                file = purify(anime['name_english'])
+                path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
+
+                await upload(f"{r_char(file)}.mp4", anime)
+                queue.remove(ani)
+            except Exception as e:
+                logger.info(f"- Error -> {e}")
 
         await asyncio.sleep(60) 
                                     
