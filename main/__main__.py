@@ -101,7 +101,7 @@ async def add(client, message):
     
 @bot.on_message(filters.command("force") & filters.user(SUDO_USERS))
 async def force(client, message):
-    anime = message.text.replace("/force", "")
+    anime = message.text.replace("/force ", "")
     await message.reply_text("Ok")
     try:
         await message.reply_text(f"Searching for (Force){anime}")
@@ -110,6 +110,25 @@ async def force(client, message):
         await message.reply_text(f"Fetching Url -> {anime['name_english']}")
         url = await m3u8_fetcher(anime)
         await message.reply_text(f"Url - {url}")
+        file = purify(anime['name_english'])
+        path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
+        await upload(f"{r_char(file)}.mp4", anime)
+        downloaded.add(anime)
+    except Exception as e:
+        logger.info(f"- Error -> {e}")
+        
+@bot.on_message(filters.command("direct") & filters.user(SUDO_USERS))
+async def direct(client, message):
+    data = message.text.replace("/direct ", "")
+    x = data.split()
+    url = x[0]
+    subs = x[1]
+    filename = "subs.vtt"
+    response = requests.get(subs)
+    with open(f"subtitles/{filename}", "wb") as f:
+        f.write(response.content)
+    await message.reply_text("Ok")
+    try:
         file = purify(anime['name_english'])
         path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
         await upload(f"{r_char(file)}.mp4", anime)
