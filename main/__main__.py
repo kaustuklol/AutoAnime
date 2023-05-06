@@ -80,10 +80,17 @@ async def refresh(client, message):
     await message.reply_text(queue)
     
 @bot.on_message(filters.command("remove") & filters.user(SUDO_USERS))
-async def refresh(client, message):
+async def remove(client, message):
     anime = message.text.replace("/remove ", "")
     queue.remove(anime)
     await message.reply_text("removing...")
+    await message.reply_text(queue)
+    
+@bot.on_message(filters.command("add") & filters.user(SUDO_USERS))
+async def add(client, message):
+    anime = message.text.replace("/add ", "")
+    queue.add(anime)
+    await message.reply_text("adding...")
     await message.reply_text(queue)
     
 @bot.on_message(filters.command("force") & filters.user(SUDO_USERS))
