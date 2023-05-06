@@ -4,6 +4,7 @@ from main.modules.utils import trim, r_char
 import os
 import logging
 logger = logging.getLogger("Consumet - ")
+import time
 
 async def m3u8_fetcher(anime):
     base = "https://api.consumet.org/anime/zoro/"
@@ -35,7 +36,7 @@ async def m3u8_fetcher(anime):
         print(url)
         return "None"
 
-    url = f"{base}info?id={id}"
+    url = f"{base}info?id={id}?t={}".format(int(time.time()))
     s = requests.Session()
     r = s.get(url)
     try:
