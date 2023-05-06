@@ -19,6 +19,8 @@ async def m3u8_fetcher(anime):
         results = r.json()['results']
     logger.info(results)
     for result in results:
+        logger.info(trim(r_char(result['title'])))
+        logger.info(trim(r_char(anime['name_english'])))
         if trim(r_char(result['title'])) == trim(r_char(anime['name_english'])):
             id = result['id']
             # print(result['url'])
