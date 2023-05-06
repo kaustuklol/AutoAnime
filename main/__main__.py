@@ -17,8 +17,7 @@ animes = []
 anilist = Anilist()
 logger = logging.getLogger("Bot")
 logger.info("Bot Started uwu!")
-downloaded = set()
-
+from config import downloaded
 async def main():
     while True:
         animes = await get_scheduled_animes()
