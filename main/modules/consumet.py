@@ -2,6 +2,8 @@ import requests
 import asyncio
 from main.modules.utils import trim, r_char
 import os
+import logging
+logging.getlogger("Consumet - ")
 
 async def m3u8_fetcher(anime):
     base = "https://api.consumet.org/anime/zoro/"
@@ -15,6 +17,7 @@ async def m3u8_fetcher(anime):
         url = f"{base}{r_char(anime['name_english'])}"
         r = requests.get(url)
         results = r.json()['results']
+    logger.info(results)
     for result in results:
         if trim(r_char(result['title'])) == trim(r_char(anime['name_english'])):
             id = result['id']
