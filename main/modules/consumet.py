@@ -36,7 +36,7 @@ async def m3u8_fetcher(anime):
         print(url)
         return "None"
 
-    url = f"{base}info?id={id}?t={}".format(int(time.time()))
+    url = f"{base}info?id={id}?t={format(int(time.time()))}"
     s = requests.Session()
     r = s.get(url)
     try:
