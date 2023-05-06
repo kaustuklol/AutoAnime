@@ -36,7 +36,6 @@ async def m3u8_fetcher(anime):
             id = results[0]['id']
     if id == "":
         print(url)
-        return "None"
 
     url = f"{base}info?id={id}?t={format(int(time.time()))}"
     s = requests.Session()
