@@ -17,23 +17,29 @@ animes = []
 anilist = Anilist()
 logger = logging.getLogger("Bot")
 logger.info("Bot Started uwu!")
-
+downloaded = set()
 
 async def main():
     while True:
+        animes = await get_scheduled_animes()
+        for anime in animes:
+            if anime['aired'] is True:
+                queue.add(anime['title'])
         for ani in queue:
             try:
-                item = purify(ani)
-                anime = anilist.get_anime(r_char(item))
-                url = await m3u8_fetcher(anime)
-                if url == "None":
-                    break
+                if ani in queue and ani not in downloaded:
+                    item = purify(ani)
+                    anime = anilist.get_anime(r_char(item))
+                    url = await m3u8_fetcher(anime)
+                    if url == "None":
+                        break
 
-                file = purify(anime['name_english'])
-                path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
+                    file = purify(anime['name_english'])
+                    path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
 
-                await upload(f"{r_char(file)}.mp4", anime)
-                queue.remove(ani)
+                    await upload(f"{r_char(file)}.mp4", anime)
+                    downloaded.add(ani)
+                    queue.remove(ani)
             except Exception as e:
                 logger.info(f"- Error -> {e}")
 
@@ -76,7 +82,8 @@ async def refresh(client, message):
     await message.reply_text("refreshing...")
     animes = await get_scheduled_animes()
     for anime in animes:
-        queue.add(anime['title'])
+        if anime['aired'] is True:
+            queue.add(anime['title'])
     await message.reply_text(queue)
     
 @bot.on_message(filters.command("remove") & filters.user(SUDO_USERS))
@@ -98,15 +105,14 @@ async def force(client, message):
     anime = message.text.replace("/force", "")
     await message.reply_text("Ok")
     try:
-        logger.info(f"- Searching for (Force){anime}")
+        message.reply_text(f"- Searching for (Force){anime}")
         item = purify(anime)
         anime = anilist.get_anime(r_char(item))
-        logger.info(f"- Fetching Url -> {anime['name_english']}")
+        message.reply_text(f"- Fetching Url -> {anime['name_english']}")
         url = await m3u8_fetcher(anime)
-        logger.info(url)
+        message.reply_text(url)
         file = purify(anime['name_english'])
         path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
-#                 await upload(path, anime)
         await upload(f"{r_char(file)}.mp4", anime)
     except Exception as e:
         logger.info(f"- Error -> {e}")
