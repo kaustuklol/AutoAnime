@@ -39,14 +39,7 @@ async def emptyqueue(client, message):
     except Exception as e:
         await message.reply_text(e)
 
-@bot.on_message(filters.command("clrdownload") & filters.user(SUDO_USERS))
-async def clrdownload(client, message):
-    try:
-        for i in downloaded:
-            downloaded.remove(i)
-            await message.reply_text("Cleared Downloaded..")
-    except Exception as e:
-        await message.reply_text(e)
+
         
 @bot.on_message(filters.command("getqueue") & filters.user(SUDO_USERS))
 async def getqueue(client, message):
@@ -55,22 +48,7 @@ async def getqueue(client, message):
     except Exception as e:
         await message.reply_text(e)
 
-@bot.on_message(filters.command("getdownloads") & filters.user(SUDO_USERS))
-async def d(client, message):
-    try:
-        await message.reply_text(downloaded)
-    except Exception as e:
-        await message.reply_text(e)
-        
-@bot.on_message(filters.command("rd") & filters.user(SUDO_USERS))
-async def d(client, message):
-    try:
-        anime = message.text.replace("/remove ", "")
-        downloaded.remove(anime)
-        await message.reply_text("removing...")
-        await message.reply_text(downloaded)
-    except Exception as e:
-        await message.reply_text(e)
+
 
 # @bot.on_message(filters.command("zoro") & filters.user(SUDO_USERS))
 # async def logs(client, message):
