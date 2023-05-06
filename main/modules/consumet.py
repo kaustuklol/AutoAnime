@@ -42,7 +42,7 @@ async def m3u8_fetcher(anime):
     s = requests.Session()
     r = s.get(url)
     try:
-        # logger.info(r.json())
+        logger.info(r.json())
         if anime['next_airing_ep']['episode'] == 1:
             results = r.json()['episodes'][int(anime['next_airing_ep']['episode'])]
         else:
