@@ -42,7 +42,8 @@ async def m3u8_fetcher(anime):
             results = r.json()['episodes'][int(anime['next_airing_ep']['episode'])]
         else:
             results = r.json()['episodes'][int(anime['next_airing_ep']['episode'])-2]
-    except:
+    except Exception as e:
+        logger.info(e)
         print("Episode Not Aired Or Can't found")
         return "None"
     id = results['id']
