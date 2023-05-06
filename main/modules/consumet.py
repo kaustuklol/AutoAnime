@@ -9,7 +9,7 @@ import time
 async def m3u8_fetcher(anime):
     base = "https://api.consumet.org/anime/zoro/"
     id = ""
-    
+    logger.info(f"Searching for {anime['name_english']}")
     try:
         s = requests.Session()
         url = f"{base}{r_char(anime['name_romaji'])}?t={format(int(time.time()))}"
