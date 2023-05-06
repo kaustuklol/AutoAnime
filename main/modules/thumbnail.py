@@ -40,9 +40,9 @@ def wrap(text):
     n=0
     txt = ""
     for i in text:
-        if n==4:
+        if n==3:
             txt += "\n\n"
-        if n==6:
+        if n==5:
             txt += "...."
             return txt
         txt += f" {i}"
