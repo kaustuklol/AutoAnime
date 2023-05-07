@@ -41,13 +41,13 @@ async def m3u8_fetcher(anime):
     s = requests.Session()
     r = s.get(url)
     try:
-        logger.info(r.json())
+#         logger.info(r.json())
         if anime['next_airing_ep']['episode'] == 1:
             results = r.json()['episodes'][int(anime['next_airing_ep']['episode'])]
         else:
             results = r.json()['episodes'][int(anime['next_airing_ep']['episode'])-2]
     except Exception as e:
-        logger.info(e)
+        logger.info(f"Episode Not Found error {e}")
         print("Episode Not Aired Or Can't found")
         return "None"
     id = results['id']
