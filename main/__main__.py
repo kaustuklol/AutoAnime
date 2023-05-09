@@ -21,26 +21,26 @@ from config import downloaded
 async def main():
     while True:
         animes = await get_scheduled_animes()
-        for anime in animes:
-            if anime['aired'] is True:
-                queue.add(anime['title'])
-        for ani in queue:
-            try:
-                if ani in queue and ani not in downloaded:
-                    item = purify(ani)
-                    anime = anilist.get_anime(r_char(item))
-                    url = await m3u8_fetcher(anime)
-                    if url == "None":
-                        pass
+#         for anime in animes:
+#             if anime['aired'] is True:
+#                 queue.add(anime['title'])
+#         for ani in queue:
+#             try:
+#                 if ani in queue and ani not in downloaded:
+#                     item = purify(ani)
+#                     anime = anilist.get_anime(r_char(item))
+#                     url = await m3u8_fetcher(anime)
+#                     if url == "None":
+#                         pass
 
-                    file = purify(anime['name_english'])
-                    path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
+#                     file = purify(anime['name_english'])
+#                     path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
 
-                    await upload(f"{r_char(file)}.mp4", anime)
-                    downloaded.add(ani)
-                    queue.remove(ani)
-            except Exception as e:
-                logger.info(f"- Error -> {e}")
+#                     await upload(f"{r_char(file)}.mp4", anime)
+#                     downloaded.add(ani)
+#                     queue.remove(ani)
+#             except Exception as e:
+#                 logger.info(f"- Error -> {e}")
 
         await asyncio.sleep(60) 
                                     
