@@ -133,23 +133,6 @@ async def force(client, message):
     except Exception as e:
         logger.info(f"- Error -> {e}")
         
-@bot.on_message(filters.command("direct") & filters.user(SUDO_USERS))
-async def direct(client, message):
-    data = message.text.replace("/direct ", "")
-    x = data.split()
-    url = x[0]
-    subs = x[1]
-    filename = "subs.vtt"
-    response = requests.get(subs)
-    with open(f"subtitles/{filename}", "wb") as f:
-        f.write(response.content)
-    await message.reply_text("Ok")
-    try:
-        file = purify(anime['name_english'])
-        path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
-        await upload(f"{r_char(file)}.mp4", anime)
-    except Exception as e:
-        logger.info(f"- Error -> {e}")
 
 @bot.on_message(filters.command("test") & filters.user(SUDO_USERS))
 async def test(client, message):
