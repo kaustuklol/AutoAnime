@@ -24,7 +24,7 @@ async def upload(f, anime):
         studio = "@Anime_Region_Ongoing"
     thumb = await gen_thumb(anime['name_english'], studio, anime['genres'], cover)
     thum = change_photo_height(thumb, 320)
-    msg = await bot.send_video(PRIVATE_CHANNEL_ID, file, progress=progress, width=1920, height=1080, thumb=thum)
+    msg = await bot.send_video(PRIVATE_CHANNEL_ID, file, progress=progress, width=1920, height=1080, thumb=thumb)
     id = msg.id
     
     
