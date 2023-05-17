@@ -23,8 +23,8 @@ async def upload(f, anime):
         logger.info(f"Studio err -> {e}")
         studio = "@Anime_Region_Ongoing"
     thumb = await gen_thumb(anime['name_english'], studio, anime['genres'], cover)
-#     thum = change_photo_height(thumb, 320)
-    msg = await bot.send_video(PRIVATE_CHANNEL_ID, file, progress=progress, width=500)
+    thum = change_photo_height(thumb, 320)
+    msg = await bot.send_video(PRIVATE_CHANNEL_ID, file, progress=progress, width=1920, height=1080, thumb=thum)
     id = msg.id
     
     
@@ -40,5 +40,5 @@ async def upload(f, anime):
             )]])
 
     await bot.send_photo(PUBLIC_CHANNEL_ID, photo=thumb, caption=title, reply_markup=keyboard)
-    os.remove(file)
+#     os.remove(file)
     await status(f"Doing Nothing!")
