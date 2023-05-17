@@ -8,7 +8,7 @@ import logging
 logger = logging.getLogger("Uploader")  
 
 async def upload(f, anime):
-    await status(f"Uploading {anime['name_english']}", "15 sec")
+#     await status(f"Uploading {anime['name_english']}", "15 sec")
     file = f.replace(" ", "-")
     uploaded = 0
     await bot.send_message(PRIVATE_CHANNEL_ID, f"{anime['name_english']} uploading to private channel")
@@ -23,7 +23,7 @@ async def upload(f, anime):
         logger.info(f"Studio err -> {e}")
         studio = "@Anime_Region_Ongoing"
     thumb = await gen_thumb(anime['name_english'], studio, anime['genres'], cover)
-    thum = change_photo_height(thumb, 320)
+#     thum = change_photo_height(thumb, 320)
     msg = await bot.send_video(PRIVATE_CHANNEL_ID, file, progress=progress, width=1920, height=1080)
     id = msg.id
     
