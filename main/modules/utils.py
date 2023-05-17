@@ -83,5 +83,25 @@ def change_photo_height(image_path, new_height):
     resized_image.save("thum.jpg")
     return "thum.jpg"
 
+import requests
+def get_anilist_id(anime_name):
+    query = '''
+    query ($anime_name: String) {
+        Media(search: $anime_name, type: ANIME) {
+            id
+        }
+    }
+    '''
 
+    variables = {
+        'anime_name': anime_name
+    }
 
+    url = 'https://graphql.anilist.co'
+
+    response = requests.post(url, json={'query': query, 'variables': variables})
+    data = response.json()
+
+    anime_id = data['data']['Media']['id']
+
+    return anime_id
