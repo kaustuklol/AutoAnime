@@ -16,16 +16,17 @@ async def upload(f, anime):
         uploaded = f"{current * 100 / total:.1f}%"
         logger.info(f"Uploaded: {uploaded}")
 #         await bot.send_message(PRIVATE_CHANNEL_ID, f"{file}, Uploaded: {uploaded}")
-    thumb = await gen_thumb(anime['name_english'], studio, anime['genres'], cover)
-    thum = change_photo_height(thumb, 320)
-    msg = await bot.send_video(PRIVATE_CHANNEL_ID, file, progress=progress, thumb=thum)
-    id = msg.id
     cover = await gen_cover(file)   
     try:
         studio = f"By {get_anime_studio(anime['name_english'])} Studios"
     except Exception as e:
         logger.info(f"Studio err -> {e}")
         studio = "@Anime_Region_Ongoing"
+    thumb = await gen_thumb(anime['name_english'], studio, anime['genres'], cover)
+    thum = change_photo_height(thumb, 320)
+    msg = await bot.send_video(PRIVATE_CHANNEL_ID, file, progress=progress, thumb=thum)
+    id = msg.id
+    
     
     title = f"{anime['name_english']} - {int(anime['next_airing_ep']['episode'])-1}\n@Anime_Region_Ongoing"   
 
