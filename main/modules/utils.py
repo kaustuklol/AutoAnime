@@ -80,7 +80,8 @@ def change_photo_height(image_path, new_height):
 
     resized_image = image.resize((new_width, new_height))
 
-    resized_image.save(image_path)
+    resized_image.save("thum.jpg")
+    return "thum.jpg"
 
 
 
