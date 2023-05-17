@@ -48,18 +48,11 @@ async def upload(f, anime):
 )
     keyboard = InlineKeyboardMarkup([
     [
-        InlineKeyboardButton(
-            text="Watch",
-            url=f"https://t.me/IcyHotRobot?start={id}-{aniId}"
-        )
-    ],
-    [
-        InlineKeyboardButton(
-            text="Comment",
-            url=f"https://t.me/c/1613690398/{cmId}?thread={cmId}"
-        )
+        InlineKeyboardButton(text="Watch", url=f"https://t.me/IcyHotRobot?start={id}-{aniId}"),
+        InlineKeyboardButton(text="Comment", url=f"https://t.me/c/1613690398/{cmId}?thread={cmId}")
     ]
 ])
+
     await bot.edit_message_reply_markup(
     chat_id=PUBLIC_CHANNEL_ID,
     message_id=post.id,
