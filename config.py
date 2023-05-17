@@ -5,4 +5,4 @@ PUBLIC_CHANNEL_ID = -1001563681125
 PRIVATE_CHANNEL_ID = -1001668192184
 SUDO_USERS = [6170129160, 2104674370]
 queue = set()
-downloaded = {"Birdie Wing - Golf Girls' Story", 'Mahou Shoujo Magical Destroyers', 'Mix - Meisei Story S2'}
+downloaded = {"The Marginal Service", "X and Y", "Majutsushi Orphen Hagure Tabi S4"}
