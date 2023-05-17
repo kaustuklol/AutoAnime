@@ -70,3 +70,17 @@ async def status(sts, time="0"):
         )
         
     
+from PIL import Image
+
+def change_photo_height(image_path, new_height):
+    image = Image.open(image_path)
+    width, height = image.size
+    aspect_ratio = width / height
+    new_width = int(new_height * aspect_ratio)
+
+    resized_image = image.resize((new_width, new_height))
+
+    resized_image.save(image_path)
+
+
+
