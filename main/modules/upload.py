@@ -2,7 +2,7 @@ from main import bot
 from config import PRIVATE_CHANNEL_ID, PUBLIC_CHANNEL_ID
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from main.modules.thumbnail import gen_thumb, gen_cover
-from main.modules.utils import get_anime_studio, status
+from main.modules.utils import get_anime_studio, status, change_photo_height
 import os
 import logging
 logger = logging.getLogger("Uploader")  
@@ -16,8 +16,9 @@ async def upload(f, anime):
         uploaded = f"{current * 100 / total:.1f}%"
         logger.info(f"Uploaded: {uploaded}")
 #         await bot.send_message(PRIVATE_CHANNEL_ID, f"{file}, Uploaded: {uploaded}")
-
-    msg = await bot.send_video(PRIVATE_CHANNEL_ID, file, progress=progress)
+    thumb = await gen_thumb(anime['name_english'], studio, anime['genres'], cover)
+    thum = change_photo_height(thumb, 320)
+    msg = await bot.send_video(PRIVATE_CHANNEL_ID, file, progress=progress, thumb=thum)
     id = msg.id
     cover = await gen_cover(file)   
     try:
@@ -25,7 +26,7 @@ async def upload(f, anime):
     except Exception as e:
         logger.info(f"Studio err -> {e}")
         studio = "@Anime_Region_Ongoing"
-    thumb = await gen_thumb(anime['name_english'], studio, anime['genres'], cover)
+    
     title = f"{anime['name_english']} - {int(anime['next_airing_ep']['episode'])-1}\n@Anime_Region_Ongoing"   
 
 
