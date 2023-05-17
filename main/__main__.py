@@ -137,7 +137,7 @@ async def force(client, message):
 @bot.on_message(filters.command("test") & filters.user(SUDO_USERS))
 async def test(client, message):
     anime = anilist.get_anime("Kubo Wont Let Me Be Invisible")
-    await upload(f"compressed.mp4", anime)
+    await upload(f"output.mp4", anime)
     
 @bot.on_message(filters.command("anime") & filters.user(SUDO_USERS))
 async def test(client, message):
