@@ -184,7 +184,7 @@ async def ad(client, message):
 async def handle_callback_query(client, callback_query):
     data = callback_query.data
     await callback_query.answer(
-        url=data
+        url=f"https://t.me/IcyHotRobot?start={data}"
     )
 with bot:
     bot.loop.run_until_complete(main())
