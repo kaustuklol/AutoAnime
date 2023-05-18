@@ -34,7 +34,7 @@ async def upload(f, anime):
     keyboard = InlineKeyboardMarkup([[
             InlineKeyboardButton(
                 text="Watch",
-                callback_data=f"https://t.me/IcyHotRobot?start={id}-{aniId}-{title}"
+                callback_data=f"{id}-{aniId}-{title}"
             )]])
 
     post = await bot.send_photo(PUBLIC_CHANNEL_ID, photo=thumb, caption=title, reply_markup=keyboard)
