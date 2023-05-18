@@ -62,34 +62,7 @@ async def main():
                                     
 @bot.on_message(filters.command("start"))
 async def start_command(client, message):
-    id = message.text.replace("/start", "")
-    if id == "":
-        message_text = "Hey there! thanks for starting me ~\n\nI am an automated anime uploader bot working on @Anime_Region_Ongoing\n\nJoin our other channels to connect with our community!"
-        anime_button = InlineKeyboardButton("Anime", url="https://t.me/Anime_Region")
-        group_button = InlineKeyboardButton("Group", url="https://t.me/Anime_Discussion_Region")
-        ongoing_anime_button = InlineKeyboardButton("Ongoing Animes", url="https://t.me/Anime_Region_Ongoing")
-
-        btns = InlineKeyboardMarkup([[anime_button, group_button], [ongoing_anime_button]])
-        await bot.send_photo(message.chat.id, photo="main/start.jpg", caption=message_text, reply_markup=btns)
-    else:
-        try:
-            id = int(id.replace(" ", ""))
-            from main.modules.force_sub import handle_force_subscribe
-            fsub = await handle_force_subscribe(bot, message)
-            if fsub == 400:
-                return
-            else:
-                await bot.copy_message(message.chat.id, PRIVATE_CHANNEL_ID, id)
-                                    
-            await bot.copy_message(message.chat.id, PRIVATE_CHANNEL_ID, id)
-        except:
-            message_text = "Hey there! thanks for starting me ~\n\nI am an automated anime uploader bot working on @Anime_Region_Ongoing\n\nJoin our other channels to connect with our community!"
-            anime_button = InlineKeyboardButton("Anime", url="https://t.me/Anime_Region")
-            group_button = InlineKeyboardButton("Group", url="https://t.me/Anime_Discussion_Region")
-            ongoing_anime_button = InlineKeyboardButton("Ongoing Animes", url="https://t.me/Anime_Region_Ongoing")
-
-            btns = InlineKeyboardMarkup([[anime_button, group_button], [ongoing_anime_button]])
-            await bot.send_photo(message.chat.id, photo="main/start.jpg", caption=message_text, reply_markup=btns)
+    pass
        
 
 @bot.on_message(filters.command("refresh") & filters.user(SUDO_USERS))
