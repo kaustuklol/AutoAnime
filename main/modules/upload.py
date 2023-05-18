@@ -9,7 +9,7 @@ from time import sleep
 logger = logging.getLogger("Uploader")  
 
 async def upload(f, anime):
-    await status(f"Uploading {anime['name_english']}", "15 sec")
+#     await status(f"Uploading {anime['name_english']}", "15 sec")
     file = f.replace(" ", "-")
     uploaded = 0
     await bot.send_message(PRIVATE_CHANNEL_ID, f"{anime['name_english']} uploading to private channel")
@@ -58,5 +58,5 @@ async def upload(f, anime):
     message_id=post.id,
     reply_markup=keyboard
 )
-    os.remove(file)
-    await status(f"Doing Nothing!")
+#     os.remove(file)
+#     await status(f"Doing Nothing!")
