@@ -179,6 +179,12 @@ async def ad(client, message):
         await message.reply_text(downloaded)
     except Exception as e:
         await message.reply_text(e)
-
+        
+@app.on_callback_query()
+async def handle_callback_query(client, callback_query):
+    data = callback_query.data
+    await callback_query.answer(
+        url=data
+    )
 with bot:
     bot.loop.run_until_complete(main())
