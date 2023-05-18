@@ -48,7 +48,7 @@ async def upload(f, anime):
 )
     keyboard = InlineKeyboardMarkup([
     [
-        InlineKeyboardButton(text="Watch", url=f"https://t.me/IcyHotRobot?start={id}-{aniId}"),
+        InlineKeyboardButton(text="Watch", callback_data=f"https://t.me/IcyHotRobot?start={id}-{aniId}-{title}"),
         InlineKeyboardButton(text="Comment", url=f"https://t.me/c/1613690398/{cmId}?thread={cmId}")
     ]
 ])
