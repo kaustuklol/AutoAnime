@@ -158,7 +158,7 @@ async def handle_callback_query(client, callback_query):
     data = callback_query.data
     await callback_query.answer(
         show_alert=False,
-        url=f"https://t.me/IcyHotRobot?start=hEloo"
+        url=f"https://t.me/IcyHotRobot?start=3070-128715"
     )
 with bot:
     bot.loop.run_until_complete(main())
