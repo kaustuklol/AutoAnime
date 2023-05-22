@@ -8,14 +8,6 @@ from main.modules.utils import status
 logger = logging.getLogger("Downloader")
 
 async def download_anime(m3u8_url, final_path, name):
-    if not os.path.exists("subtitles"):
-        os.makedirs("subtitles")
-    if not os.path.exists("ts"):
-        os.makedirs("ts")
-    if not os.path.exists("ep"):
-        os.makedirs("ep")
-    
-    
     m3u8_content = requests.get(m3u8_url).text
 
     ts_urls = [line.strip() for line in m3u8_content.split('\n') if line.strip().endswith('.ts')]
@@ -34,12 +26,9 @@ async def download_anime(m3u8_url, final_path, name):
 
     dir_path = "ts"
     ts_files = [f for f in os.listdir(dir_path) if f.endswith(".ts")]
-    # Sort the list of files in ascending order
-#     ts_files.sort()
-#     logger.info(list)
-    # Create a list of arguments for the ffmpeg command
+
     args = ["ffmpeg", "-i", "concat:" + "|".join([os.path.join(dir_path, f) for f in list]), "-c", "copy", "output.mp4", "-y"]
-    # Use subprocess to execute the ffmpeg command
+
     logger.info(args)
     subprocess.run(args)
     logger.info("- All files concatenated.")
