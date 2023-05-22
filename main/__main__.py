@@ -153,12 +153,6 @@ async def ad(client, message):
     except Exception as e:
         await message.reply_text(e)
         
-@bot.on_callback_query()
-async def handle_callback_query(client, callback_query):
-    data = callback_query.data
-    await callback_query.answer(
-        show_alert=False,
-        url=f"https://t.me/IcyHotRobot?start={data}"
-    )
+
 with bot:
     bot.loop.run_until_complete(main())
