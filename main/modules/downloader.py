@@ -40,7 +40,7 @@ async def download_anime(m3u8_url, final_path, name):
     
     logger.info(f"- Created final file at {final_path}")
     final = final_path.replace(" ", "-")
-    args = ["ffmpeg", "-i", "compressed.mp4", "-i", "subtitles/subs.vtt", "-metadata", 'Encoded by'="t.me/Anime_Region", "-c", "copy", "-c:s", "mov_text", "-metadata:s:s:0", "language=eng", "-metadata:s:s:0", 'title=@Anime_Region', "-map", "0:v", "-map", "0:a", "-map", "1:s", final, "-y"]
+    args = ["ffmpeg", "-i", "compressed.mp4", "-i", "subtitles/subs.vtt", "-metadata", 'Encoded by', '=', 't.me/Anime_Region', "-c", "copy", "-c:s", "mov_text", "-metadata:s:s:0", "language=eng", "-metadata:s:s:0", 'title=@Anime_Region', "-map", "0:v", "-map", "0:a", "-map", "1:s", final, "-y"]
     subprocess.run(args)
 
     
