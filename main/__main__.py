@@ -37,27 +37,6 @@ async def main():
                     downloaded.add(ani)
             except Exception as e:
                 logger.info(f"- General Error -> {e}")
-#         for anime in animes:
-#             if anime['aired'] is True:
-#                 queue.add(anime['title'])
-#         for ani in queue:
-#             try:
-#                 if ani in queue and ani not in downloaded:
-#                     item = purify(ani)
-#                     anime = anilist.get_anime(r_char(item))
-#                     url = await m3u8_fetcher(anime)
-#                     if url == "None":
-#                         pass
-
-#                     file = purify(anime['name_english'])
-#                     path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
-
-#                     await upload(f"{r_char(file)}.mp4", anime)
-#                     downloaded.add(ani)
-#                     queue.remove(ani)
-#             except Exception as e:
-#                 logger.info(f"- Error -> {e}")
-
         await asyncio.sleep(60) 
                                     
 @bot.on_message(filters.command("start"))
@@ -153,6 +132,14 @@ async def ad(client, message):
     except Exception as e:
         await message.reply_text(e)
         
+@bot.on_message(filters.command("emptyqueue") & filters.user(SUDO_USERS))
+async def emptyqueue(client, message):
+    try:
+        for i in queue:
+            queue.remove(i)
+            await message.reply_text("Emptied Queue..")
+    except Exception as e:
+        await message.reply_text(e)
 
 with bot:
     bot.loop.run_until_complete(main())
