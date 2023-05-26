@@ -30,14 +30,6 @@ async def clrlogs(client, message):
     open('log.txt', 'w').close()
     await message.reply_text("Logs Cleared...")    
     
-@bot.on_message(filters.command("emptyqueue") & filters.user(SUDO_USERS))
-async def emptyqueue(client, message):
-    try:
-        for i in queue:
-            queue.remove(i)
-            await message.reply_text("Emptied Queue..")
-    except Exception as e:
-        await message.reply_text(e)
 
 
         
