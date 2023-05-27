@@ -21,22 +21,22 @@ from config import downloaded
 async def main():
     while True:
         animes = await get_scheduled_animes()
-        for anime in animes:
-            if anime['aired'] is True:
-                queue.add(anime['title'])
-        for ani in queue:
-            try:
-                if ani not in downloaded:
-                    item = purify(ani)
-                    anime = anilist.get_anime(r_char(item))
-                    url = await m3u8_fetcher(anime)
+#         for anime in animes:
+#             if anime['aired'] is True:
+#                 queue.add(anime['title'])
+#         for ani in queue:
+#             try:
+#                 if ani not in downloaded:
+#                     item = purify(ani)
+#                     anime = anilist.get_anime(r_char(item))
+#                     url = await m3u8_fetcher(anime)
                     
-                    file = purify(anime['name_english'])
-                    path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
-                    await upload(f"{r_char(file)}.mp4", anime)
-                    downloaded.add(ani)
-            except Exception as e:
-                logger.info(f"- General Error -> {e}")
+#                     file = purify(anime['name_english'])
+#                     path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
+#                     await upload(f"{r_char(file)}.mp4", anime)
+#                     downloaded.add(ani)
+#             except Exception as e:
+#                 logger.info(f"- General Error -> {e}")
         await asyncio.sleep(60) 
                                     
 @bot.on_message(filters.command("start"))
