@@ -1,14 +1,35 @@
 from main import bot
 from config import PRIVATE_CHANNEL_ID, PUBLIC_CHANNEL_ID
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from main.modules.thumbnail import gen_thumb, gen_cover
+# from main.modules.thumbnail import gen_thumb, gen_cover
 from main.modules.utils import get_anime_studio, status, get_anilist_id
 import os
 import logging
 from time import sleep
 logger = logging.getLogger("Uploader")  
+import requests
+
+def get_thumb(id):
+    api_url = f"https://img.anili.st/media/{id}"
+    save_path = "assets/thumbnail.png"
+    try:
+        response = requests.get(api_url)
+        response.raise_for_status()  # Raise an exception if the request was unsuccessful
+
+        with open(save_path, "wb") as file:
+            file.write(response.content)
+
+        print(f"The image has been downloaded and saved as {save_path}.")
+    except requests.HTTPError as e:
+        print(f"An HTTP error occurred: {e}")
+    except requests.RequestException as e:
+        print(f"An error occurred: {e}")
+    return save_path
+
 
 async def upload(f, anime):
+    aniId = get_anilist_id(anime['name_english'])
+    thumb = get_thumb(anId)
     await status(f"Uploading {anime['name_english']}", "15 sec")
     file = f.replace(" ", "-")
     uploaded = 0
@@ -17,19 +38,18 @@ async def upload(f, anime):
         uploaded = f"{current * 100 / total:.1f}%"
         logger.info(f"Uploaded: {uploaded}")
         
-    cover = await gen_cover(file)   
+#     cover = await gen_cover(file)   
     try:
         studio = f"By {get_anime_studio(anime['name_english'])} Studios"
     except Exception as e:
         logger.info(f"Studio err -> {e}")
         studio = "@Anime_Region_Ongoing"
-    thumb = await gen_thumb(anime['name_english'], studio, anime['genres'], cover)
+#     thumb = await gen_thumb(anime['name_english'], studio, anime['genres'], cover)
 
     msg = await bot.send_video(PRIVATE_CHANNEL_ID, file, progress=progress, width=1920, height=1080, thumb=thumb)
     id = msg.id
     logger.info(f"{file} uploaded to private channel")
     
-    aniId = get_anilist_id(anime['name_english'])
     title = f"{anime['name_english']} - {int(anime['next_airing_ep']['episode'])-1}\n@Anime_Region_Ongoing"   
     keyboard = InlineKeyboardMarkup([[
             InlineKeyboardButton(
