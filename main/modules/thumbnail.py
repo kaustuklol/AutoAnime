@@ -8,8 +8,8 @@ import asyncio
 
 async def gen_cover(video_path):
     cap = cv2.VideoCapture(video_path)
-    start_time = 60  # 1 minute
-    end_time = 90  # 1 minute 30 seconds
+    start_time = 120  # 1 minute
+    end_time = 240  # 1 minute 30 seconds
 
     # Set the video capture position randomly between the start and end time
     cap.set(
