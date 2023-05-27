@@ -29,7 +29,7 @@ def get_thumb(id):
 
 async def upload(f, anime):
     aniId = get_anilist_id(anime['name_english'])
-    thumb = get_thumb(anId)
+    thumb = get_thumb(aniId)
     await status(f"Uploading {anime['name_english']}", "15 sec")
     file = f.replace(" ", "-")
     uploaded = 0
