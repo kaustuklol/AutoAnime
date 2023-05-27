@@ -42,7 +42,7 @@ async def upload(f, anime):
     try:
         studio = f"By {get_anime_studio(anime['name_english'])} Studios"
     except Exception as e:
-        logger.info(f"Studio err -> {e}")
+        logger.info(f"Studio err - {e}")
         studio = "@Anime_Region_Ongoing"
 #     thumb = await gen_thumb(anime['name_english'], studio, anime['genres'], cover)
 
