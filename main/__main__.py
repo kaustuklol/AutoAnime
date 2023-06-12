@@ -22,19 +22,33 @@ async def main():
     while True:
         animes = await get_scheduled_animes()
         for anime in animes:
-            if anime['aired'] is True:
+            if anime['aired'] is True and not in downlaoded:
                 queue.add(anime['title'])
         for ani in queue:
             try:
                 if ani not in downloaded:
                     item = purify(ani)
-                    anime = anilist.get_anime(r_char(item))
+                    p = r_char(item)
+                    anime = anilist.get_anime(p)
+                    if anime['next_airing_ep'] is None:
+                        try:
+                            for i in range(20):
+                                anime = anilist.get_anime(f"{p} season {i}")
+                                if anime['next_airing_ep'] is not None:
+                                    break
+                                else:
+                                    continue
+                        except Exception as e:
+                            logger.info(e)
+                        
+                        
                     url = await m3u8_fetcher(anime)
                     
                     file = purify(anime['name_english'])
                     path = await download_anime(url, f"{r_char(file)}.mp4", anime['name_english'])
                     await upload(f"{r_char(file)}.mp4", anime)
                     downloaded.add(ani)
+                    queue.remove(ani)
             except Exception as e:
                 logger.info(f"- General Error -> {e}")
         await asyncio.sleep(60) 
@@ -99,9 +113,8 @@ async def test(client, message):
 @bot.on_message(filters.command("clrdownload") & filters.user(SUDO_USERS))
 async def clrdownload(client, message):
     try:
-        for i in downloaded:
-            downloaded.remove(i)
-            await message.reply_text("Cleared Downloaded..")
+        downloaded.clear()
+        await message.reply_text("Cleared Downloaded..")
     except Exception as e:
         await message.reply_text(e)
         
@@ -135,9 +148,8 @@ async def ad(client, message):
 @bot.on_message(filters.command("emptyqueue") & filters.user(SUDO_USERS))
 async def emptyqueue(client, message):
     try:
-        for i in queue:
-            queue.remove(i)
-            await message.reply_text("Emptied Queue..")
+        queue.clear()
+        await message.reply_text("Emptied Queue..")
     except Exception as e:
         await message.reply_text(e)
 
