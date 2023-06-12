@@ -22,7 +22,7 @@ async def main():
     while True:
         animes = await get_scheduled_animes()
         for anime in animes:
-            if anime['aired'] is True and anime['title'] not in downlaoded:
+            if anime['aired'] is True and anime['title'] not in downloaded:
                 queue.add(anime['title'])
         for ani in queue:
             try:
