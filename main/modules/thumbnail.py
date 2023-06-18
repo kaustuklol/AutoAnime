@@ -50,12 +50,13 @@ def wrap(text):
 
     return txt
 
-async def gen_thumb(anime_name, studio_name, genre_text_list, cover):
-    thumbs = os.listdir("assets/thumbs/")
+async def gen_thumb(anime_name, studio_name, genre_text_list):
+    thumbs = os.listdir("TelegramBot/helpers/assets/thumbs/")
+    cover = await gen_cover(anime_name)
     
     # Load cover and random thumbnail
-    background = Image.open(cover)
-    thumb = Image.open(f"assets/thumbs/{random.choice(thumbs)}")
+    background = Image.open("TelegramBot/helpers/assets/covers/bg.png")
+    thumb = Image.open(f"TelegramBot/helpers/assets/thumbs/{random.choice(thumbs)}")
     
     # Resize thumbnail
     new_height = 1080
@@ -63,43 +64,52 @@ async def gen_thumb(anime_name, studio_name, genre_text_list, cover):
     new_width = int(new_height * aspect_ratio)
     thumb = thumb.resize((new_width, new_height))
     
-    # Add thumbnail to cover
-    x = 0   # margin of 50 pixels
-    background.paste(thumb, (x, 0), thumb)
+    # Calculate positions for thumbnail and cover
+    thumb_x = background.width - thumb.width  # Right side
+    cover_x = 0  # Left side
+    
+    # Create region boxes
+    thumb_region = (thumb_x, 0, thumb_x + thumb.width, 0 + thumb.height)
+    cover_region = (cover_x, 0, cover_x + cover.width, 0 + cover.height)
+    
+    # Add thumbnail and cover to the background
+    background.paste(thumb, thumb_region)
+    background.paste(cover, cover_region)
     
     # Add text on the thumbnail
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype("assets/font1.ttf", 83)
+    font = ImageFont.truetype("TelegramBot/helpers/assets/font1.ttf", 83)
     text = wrap(anime_name)
     text_width, text_height = draw.textsize(text, font)
-    x = thumb.width - text_width - 50
+    x = thumb_x + thumb.width - text_width - 50
     y = (background.height - text_height) // 4
     draw.text((x, y), text, font=font, fill=(255, 255, 255))
 
-    # Add text on the thumbnail
+    # Add text for studio name
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype("assets/font2.otf", 50)
+    font = ImageFont.truetype("TelegramBot/helpers/assets/font2.otf", 50)
     text = studio_name
     text_width, text_height = draw.textsize(text, font)
-    x = thumb.width - text_width - 150
+    x = thumb_x + thumb.width - text_width - 150
     y = (background.height - text_height) // 1.7
     draw.text((x, y), text, font=font, fill=(255, 255, 255))
     
+    # Add genre text
     genre_text = ""
     for i in range(len(genre_text_list)):
-        if i==3:
+        if i == 3:
             break
-        genre_text += f"•{genre_text_list[i]}  "
+        genre_text += f"• {genre_text_list[i]}  "
 
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype("assets/font2.otf", 43)
+    font = ImageFont.truetype("TelegramBot/helpers/assets/font2.otf", 43)
     text = genre_text
     text_width, text_height = draw.textsize(text, font)
     x = 1175
     y = (background.height - text_height) // 1.1
     draw.text((x, y), text, font=font, fill=(255, 255, 255))
     
-    # background.show()
-    background.save("assets/thumbnail.png")
-
-    return "assets/thumbnail.png"
+    # Save and return the thumbnail image path
+    thumbnail_path = "TelegramBot/helpers/assets/thumbnail.png"
+    background.save(thumbnail_path)
+    return thumbnail_path
