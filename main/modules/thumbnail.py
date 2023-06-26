@@ -50,12 +50,11 @@ def wrap(text):
 
     return txt
 
-async def gen_thumb(anime_name, studio_name, genre_text_list):
+async def gen_thumb(anime_name, studio_name, genre_text_list, cover):
     thumbs = os.listdir("TelegramBot/helpers/assets/thumbs/")
-    cover = await gen_cover(anime_name)
     
     # Load cover and random thumbnail
-    background = Image.open("TelegramBot/helpers/assets/covers/bg.png")
+    background = Image.open(cover)
     thumb = Image.open(f"TelegramBot/helpers/assets/thumbs/{random.choice(thumbs)}")
     
     # Resize thumbnail
